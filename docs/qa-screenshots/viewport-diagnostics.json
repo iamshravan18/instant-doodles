@@ -1,0 +1,1049 @@
+{
+  "shots": [
+    {
+      "name": "home",
+      "route": "/",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/home-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 8679
+    },
+    {
+      "name": "home",
+      "route": "/",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/home-390.png",
+      "pngWidth": 390,
+      "pngHeight": 13130
+    },
+    {
+      "name": "features",
+      "route": "/features",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/features-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 6571
+    },
+    {
+      "name": "features",
+      "route": "/features",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/features-390.png",
+      "pngWidth": 390,
+      "pngHeight": 11999
+    },
+    {
+      "name": "use-cases",
+      "route": "/use-cases",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/use-cases-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 4889
+    },
+    {
+      "name": "use-cases",
+      "route": "/use-cases",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/use-cases-390.png",
+      "pngWidth": 390,
+      "pngHeight": 7465
+    },
+    {
+      "name": "alternatives",
+      "route": "/alternatives",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/alternatives-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 3590
+    },
+    {
+      "name": "alternatives",
+      "route": "/alternatives",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/alternatives-390.png",
+      "pngWidth": 390,
+      "pngHeight": 6171
+    },
+    {
+      "name": "comparison-doodly",
+      "route": "/alternatives/doodly",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/comparison-doodly-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 4213
+    },
+    {
+      "name": "comparison-doodly",
+      "route": "/alternatives/doodly",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/comparison-doodly-390.png",
+      "pngWidth": 390,
+      "pngHeight": 6821
+    },
+    {
+      "name": "comparison-videoscribe",
+      "route": "/alternatives/videoscribe",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/comparison-videoscribe-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 4073
+    },
+    {
+      "name": "comparison-videoscribe",
+      "route": "/alternatives/videoscribe",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/comparison-videoscribe-390.png",
+      "pngWidth": 390,
+      "pngHeight": 6594
+    },
+    {
+      "name": "comparison-animaker",
+      "route": "/alternatives/animaker",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/comparison-animaker-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 4178
+    },
+    {
+      "name": "comparison-animaker",
+      "route": "/alternatives/animaker",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/comparison-animaker-390.png",
+      "pngWidth": 390,
+      "pngHeight": 6634
+    },
+    {
+      "name": "samples",
+      "route": "/samples",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/samples-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 4004
+    },
+    {
+      "name": "samples",
+      "route": "/samples",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/samples-390.png",
+      "pngWidth": 390,
+      "pngHeight": 6233
+    },
+    {
+      "name": "resources",
+      "route": "/resources",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/resources-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 3985
+    },
+    {
+      "name": "resources",
+      "route": "/resources",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/resources-390.png",
+      "pngWidth": 390,
+      "pngHeight": 6853
+    },
+    {
+      "name": "whiteboard-animation-software",
+      "route": "/whiteboard-animation-software",
+      "requested": 1440,
+      "innerWidth": 1440,
+      "outerWidth": 1440,
+      "devicePixelRatio": 1,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/whiteboard-animation-software-1440.png",
+      "pngWidth": 1440,
+      "pngHeight": 5267
+    },
+    {
+      "name": "whiteboard-animation-software",
+      "route": "/whiteboard-animation-software",
+      "requested": 390,
+      "innerWidth": 390,
+      "outerWidth": 390,
+      "devicePixelRatio": 1,
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "overflowX": 0,
+      "file": "docs/qa-screenshots/whiteboard-animation-software-390.png",
+      "pngWidth": 390,
+      "pngHeight": 8323
+    },
+    {
+      "name": "mobile-nav-open",
+      "route": "/",
+      "requested": 390,
+      "pngWidth": 390,
+      "pngHeight": 844
+    }
+  ],
+  "overflow": [
+    {
+      "route": "/",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/features",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/use-cases",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/resources",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-software",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/ai-whiteboard-animation",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/doodle-video-creator",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-video-maker",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/educational-video-maker",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/training-video-software",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-examples",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/doodly",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/videoscribe",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/animaker",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/samples",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/pricing",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/terms",
+      "width": 1440,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/features",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/use-cases",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/resources",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-software",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/ai-whiteboard-animation",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/doodle-video-creator",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-video-maker",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/educational-video-maker",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/training-video-software",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-examples",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/doodly",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/videoscribe",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/animaker",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/samples",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/pricing",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/terms",
+      "width": 1024,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/features",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/use-cases",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/resources",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-software",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/ai-whiteboard-animation",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/doodle-video-creator",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-video-maker",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/educational-video-maker",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/training-video-software",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-examples",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/doodly",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/videoscribe",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/animaker",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/samples",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/pricing",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/terms",
+      "width": 768,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/features",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/use-cases",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/resources",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-software",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/ai-whiteboard-animation",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/doodle-video-creator",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-video-maker",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/educational-video-maker",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/training-video-software",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-examples",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/doodly",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/videoscribe",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/animaker",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/samples",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/pricing",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/terms",
+      "width": 430,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/features",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/use-cases",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/resources",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-software",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/ai-whiteboard-animation",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/doodle-video-creator",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-video-maker",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/educational-video-maker",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/training-video-software",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-examples",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/doodly",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/videoscribe",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/animaker",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/samples",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/pricing",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/terms",
+      "width": 390,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/features",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/use-cases",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/resources",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-software",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/ai-whiteboard-animation",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/doodle-video-creator",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-video-maker",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/educational-video-maker",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/training-video-software",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/whiteboard-animation-examples",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/doodly",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/videoscribe",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/alternatives/animaker",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/samples",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/pricing",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/about",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/privacy",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    },
+    {
+      "route": "/terms",
+      "width": 375,
+      "overflowX": 0,
+      "overflow": false
+    }
+  ]
+}

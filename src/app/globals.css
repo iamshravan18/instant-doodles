@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Design tokens — Independent InstaDoodle Guide
+   Warm off-white canvas · ink outlines · violet/magenta accents
+   Signature: hand-drawn "scene frame" + sketched underline motifs
+   ============================================================ */
+:root {
+  /* Color */
+  --paper: #f8f7f8;
+  --card: #ffffff;
+  --ink: #0f0f10;
+  --muted: #5d5960;
+  --violet: #621cda;
+  --violet-600: #521bb8;
+  --magenta: #c709a3;
+  --rose: #d4346b;
+  --lavender: #e7d7f3;
+  --lavender-soft: #f0e6fa;
+  --marker: #ffe08a; /* warm highlighter — used sparingly */
+  --line: #ded9e1;
+
+  /* Typography scale (fluid) */
+  --step--1: clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.075rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.4rem);
+  --step-2: clamp(1.5rem, 1.35rem + 0.75vw, 1.95rem);
+  --step-3: clamp(1.95rem, 1.7rem + 1.25vw, 2.75rem);
+  --step-4: clamp(2.5rem, 2.05rem + 2.25vw, 4rem);
+  --step-5: clamp(3rem, 2.3rem + 3.5vw, 5.25rem);
+
+  /* Layout */
+  --container: 72rem;
+  --container-narrow: 52rem;
+
+  /* Radii */
+  --r-sm: 0.75rem;
+  --r-md: 1rem;
+  --r-lg: 1.5rem;
+  --r-xl: 2rem;
+
+  /* Borders */
+  --border-ink: 2px solid var(--ink);
+  --border-hair: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+
+  /* Shadows / depth */
+  --shadow-sm: 0 1px 2px rgba(15, 15, 16, 0.06);
+  --shadow-card: 0 12px 30px -18px rgba(15, 15, 16, 0.35);
+  --shadow-hard: 5px 5px 0 var(--ink);
+  --shadow-hard-lavender: 8px 8px 0 var(--lavender);
+
+  /* Gradients (restrained) */
+  --grad-brand: linear-gradient(90deg, var(--violet), var(--magenta) 60%, var(--rose));
+  --grad-hero: radial-gradient(circle at 50% 0%, #f0d9ff, transparent 42%),
+    linear-gradient(180deg, #fff 0%, var(--paper) 100%);
+
+  /* Motion */
+  --dur-fast: 140ms;
+  --dur: 240ms;
+  --dur-slow: 520ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-violet: var(--violet);
+  --color-magenta: var(--magenta);
+  --color-rose: var(--rose);
+  --color-lavender: var(--lavender);
+  --color-marker: var(--marker);
+  --color-line: var(--line);
+  --font-sans: var(--font-manrope), "Manrope", Arial, sans-serif;
+  --font-hand: var(--font-hand), "Caveat", ui-rounded, cursive;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-manrope), Arial, sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+a { text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--lavender); color: var(--ink); }
+
+/* ---- Doodle motifs (signature) ---- */
+
+/* Faint paper dot grid used behind product panels */
+.doodle-dots {
+  background-image: radial-gradient(circle at 12px 12px, rgba(15, 15, 16, 0.11) 1.3px, transparent 1.4px);
+  background-size: 24px 24px;
+}
+
+/* Marker highlight behind inline words */
+.marker {
+  background: linear-gradient(120deg, transparent 4%, var(--marker) 4%, var(--marker) 96%, transparent 96%);
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Gradient brand text */
+.text-brand-gradient {
+  background: var(--grad-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hand-drawn "scene frame": editor window chrome around product images */
+.scene-frame {
+  position: relative;
+  border: var(--border-ink);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  box-shadow: var(--shadow-hard-lavender);
+  overflow: hidden;
+}
+.scene-frame__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: var(--border-hair);
+  background: color-mix(in srgb, var(--lavender) 30%, #fff);
+}
+.scene-frame__dot { width: 0.6rem; height: 0.6rem; border-radius: 999px; border: 1.5px solid var(--ink); }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: var(--r-sm);
+  font-weight: 800;
+  transition: top var(--dur) var(--ease-out);
+}
+.skip-link:focus { top: 1rem; }
+
+/* Native FAQ marker rotation */
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
