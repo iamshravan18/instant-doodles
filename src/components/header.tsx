@@ -14,6 +14,7 @@ const NAV = [
   ["Compare", "/alternatives"],
   ["Samples", "/samples"],
   ["Resources", "/resources"],
+  ["Search", "/search"],
 ] as const;
 
 function isActive(pathname: string, href: string) {

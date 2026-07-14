@@ -3,7 +3,9 @@ import { Manrope, Caveat } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { IS_SITE_URL_CONFIGURED, SITE_URL } from "@/lib/site";
+import { JsonLd } from "@/components/json-ld";
+import { siteStructuredData } from "@/lib/schema";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -12,7 +14,6 @@ const manrope = Manrope({
   display: "swap",
 });
 
-// Restrained hand-drawn accent used only for small annotation marks — reinforces the doodle identity.
 const caveat = Caveat({
   variable: "--font-hand",
   subsets: ["latin"],
@@ -22,13 +23,24 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Independent InstaDoodle Guide | Whiteboard Animation", template: "%s | Independent InstaDoodle Guide" },
-  description: "An independent guide to InstaDoodle's AI-powered whiteboard animation and doodle video creation workflow.",
-  applicationName: "Independent InstaDoodle Guide",
+  title: { default: "Independent InstaDoodle Guide | Whiteboard Animation", template: `%s | ${SITE_NAME}` },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   alternates: { canonical: "/" },
-  robots: IS_SITE_URL_CONFIGURED ? { index: true, follow: true } : { index: false, follow: true },
-  openGraph: { type: "website", siteName: "Independent InstaDoodle Guide", locale: "en_US" },
-  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_US",
+    url: "/",
+    title: "Independent InstaDoodle Guide | Whiteboard Animation",
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Independent InstaDoodle Guide | Whiteboard Animation",
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
@@ -39,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${caveat.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
+        <JsonLd data={siteStructuredData()} />
         <a href="#main" className="skip-link">Skip to content</a>
         <Header />
         <main id="main" className="flex-1">{children}</main>

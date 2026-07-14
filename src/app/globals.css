@@ -167,3 +167,14 @@ details > summary::-webkit-details-marker { display: none; }
     scroll-behavior: auto !important;
   }
 }
+
+
+/* Answer-first summaries and evidence notes improve scanability without adding visual noise. */
+.answer-summary {
+  border-left: 4px solid var(--magenta);
+  padding-left: 1rem;
+}
+.source-note {
+  border-left: 3px solid var(--lavender);
+  padding-left: 1rem;
+}

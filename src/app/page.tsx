@@ -7,7 +7,8 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 import { TrackedLink } from "@/components/tracked-link";
 import { Callout, Card, Eyebrow, Pill, SceneFrame, Section, SectionHeading, SketchUnderline } from "@/components/ui";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
-import { absoluteUrl } from "@/lib/site";
+import { homeStructuredData } from "@/lib/schema";
+import { OFFICIAL_PRODUCT_URL } from "@/lib/site";
 
 const IMG = "/images/instadoodle";
 
@@ -57,10 +58,7 @@ const faqs = [
 ] as const;
 
 export default function Home() {
-  const schema = [
-    { "@context": "https://schema.org", "@type": "WebSite", name: "Independent InstaDoodle Guide", url: absoluteUrl() },
-    { "@context": "https://schema.org", "@type": "WebPage", name: "Independent InstaDoodle Guide", description: "An independent guide to InstaDoodle's AI-powered whiteboard animation and doodle video creation workflow.", url: absoluteUrl() },
-  ];
+  const schema = homeStructuredData(faqs);
 
   return (
     <>
@@ -82,7 +80,7 @@ export default function Home() {
               </h1>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-6 max-w-xl text-[length:var(--step-1)] leading-8 text-muted">
+              <p className="answer-summary mt-6 max-w-xl text-[length:var(--step-1)] leading-8 text-muted">
                 A practical, independent guide to <strong className="font-bold text-ink">InstaDoodle</strong> — an
                 AI-assisted whiteboard animation tool that turns a text prompt, script or image into scene-based doodle
                 videos, right in the browser.
@@ -148,10 +146,15 @@ export default function Home() {
               generation, a doodle asset library, scene editing, voiceover and rendering into a single cloud editor. You
               shape a story scene by scene rather than starting from a blank illustration canvas.
             </p>
-            <Callout kind="verified">
-              The official site describes InstaDoodle as a cloud-based app for creating whiteboard animation explainer
-              videos from text prompts, images and a 1,000+ doodle library.
-            </Callout>
+            <div className="mt-5">
+              <Callout kind="verified">
+                The official site describes InstaDoodle as a cloud-based app for creating whiteboard animation explainer
+                videos from text prompts, images and a 1,000+ doodle library.
+              </Callout>
+              <p className="mt-3 text-sm text-muted">
+                Source: <a href={OFFICIAL_PRODUCT_URL} rel="noopener noreferrer" className="font-semibold text-violet hover:underline">official InstaDoodle product information</a>. Confirm time-sensitive plan details before deciding.
+              </p>
+            </div>
           </Reveal>
           <Reveal delay={0.1} y={22}>
             <SceneFrame

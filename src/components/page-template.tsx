@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { SitePage } from "@/lib/site";
-import { absoluteUrl } from "@/lib/site";
+import { OFFICIAL_PRODUCT_URL } from "@/lib/site";
+import { pageStructuredData } from "@/lib/schema";
 import { JsonLd } from "./json-ld";
 import { CtaBand } from "./cta";
 import { PageBlocks } from "./page-blocks";
@@ -32,7 +33,6 @@ const labels: Record<string, string> = {
   "/alternatives/animaker": "InstaDoodle vs Animaker",
 };
 
-// Hero background per intent, so routes don't share one look.
 const heroTone: Record<SitePage["kind"], string> = {
   hub: "radial-gradient(circle at 15% 0%, #f0d9ff, transparent 45%), linear-gradient(180deg,#fff,var(--paper))",
   commercial: "radial-gradient(circle at 85% 0%, #ffe0f4, transparent 45%), linear-gradient(180deg,#fff,var(--paper))",
@@ -44,61 +44,58 @@ const heroTone: Record<SitePage["kind"], string> = {
 export function PageTemplate({ page }: { page: SitePage }) {
   const path = `/${page.slug.join("/")}`;
   const isComparisonChild = page.slug.length > 1 && page.slug[0] === "alternatives";
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl() },
-        ...(isComparisonChild ? [{ "@type": "ListItem", position: 2, name: "Comparison guide", item: absoluteUrl("/alternatives") }] : []),
-        { "@type": "ListItem", position: isComparisonChild ? 3 : 2, name: page.title, item: absoluteUrl(path) },
-      ],
-    },
-    { "@context": "https://schema.org", "@type": "WebPage", name: page.title, description: page.description, url: absoluteUrl(path) },
-  ];
-
-  const ctaEvent = path === "/pricing" ? ANALYTICS_EVENTS.pricingCta : page.kind === "comparison" ? ANALYTICS_EVENTS.comparisonCta : ANALYTICS_EVENTS.finalCta;
+  const schema = pageStructuredData(page);
+  const ctaEvent =
+    path === "/pricing"
+      ? ANALYTICS_EVENTS.pricingCta
+      : page.kind === "comparison"
+        ? ANALYTICS_EVENTS.comparisonCta
+        : ANALYTICS_EVENTS.finalCta;
 
   return (
     <>
       <JsonLd data={schema} />
 
-      {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="border-b border-black/10 bg-card">
-        <div className="mx-auto max-w-6xl px-5 py-3 text-sm text-muted lg:px-8">
-          <Link href="/" className="hover:text-violet">Home</Link>
-          {isComparisonChild && (<><span className="mx-2" aria-hidden>/</span><Link href="/alternatives" className="hover:text-violet">Comparison guide</Link></>)}
-          <span className="mx-2" aria-hidden>/</span>
-          <span aria-current="page" className="font-semibold text-ink">{page.title}</span>
-        </div>
+        <ol className="mx-auto flex max-w-6xl flex-wrap items-center px-5 py-3 text-sm text-muted lg:px-8">
+          <li><Link href="/" className="hover:text-violet">Home</Link></li>
+          {isComparisonChild && (
+            <>
+              <li className="mx-2" aria-hidden>/</li>
+              <li><Link href="/alternatives" className="hover:text-violet">Comparison guide</Link></li>
+            </>
+          )}
+          <li className="mx-2" aria-hidden>/</li>
+          <li aria-current="page" className="font-semibold text-ink">{page.title}</li>
+        </ol>
       </nav>
 
-      {/* Intent-aware hero */}
       <section className="relative overflow-hidden border-b border-black/10">
         <div aria-hidden className="absolute inset-0 -z-10" style={{ background: heroTone[page.kind] }} />
         <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-20">
-          <Reveal>
-            <Eyebrow tone="violet">Independent guide · {page.eyebrow}</Eyebrow>
-          </Reveal>
+          <Reveal><Eyebrow tone="violet">Independent guide · {page.eyebrow}</Eyebrow></Reveal>
           <Reveal delay={0.05}>
             <h1 className="mt-4 max-w-4xl text-[length:var(--step-4)] font-black leading-[0.98] tracking-[-0.035em] text-balance">{page.h1}</h1>
             <SketchUnderline className="mt-3 max-w-[16rem]" />
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-2xl text-[length:var(--step-1)] leading-8 text-muted">{page.intro}</p>
+            <div className="answer-summary mt-6 max-w-2xl">
+              <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-violet">Quick answer</p>
+              <p className="mt-2 text-[length:var(--step-1)] leading-8 text-muted">{page.intro}</p>
+            </div>
           </Reveal>
           {page.heroCtas && (
             <Reveal delay={0.15}>
               <div className="mt-8 flex flex-wrap gap-3">
-                {page.heroCtas.map((c, i) => (
+                {page.heroCtas.map((cta, index) => (
                   <TrackedLink
-                    key={c.href}
-                    href={c.href}
-                    event={i === 0 ? (page.kind === "comparison" ? ANALYTICS_EVENTS.comparisonCta : ANALYTICS_EVENTS.primaryCta) : ANALYTICS_EVENTS.navigationCta}
-                    eventDetail={{ placement: "page_hero", destination: c.href }}
-                    className={i === 0 ? "rounded-full bg-violet px-6 py-3.5 font-extrabold text-white shadow-[var(--shadow-hard)] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none" : "rounded-full border-2 border-ink px-6 py-3.5 font-extrabold transition hover:bg-card"}
+                    key={cta.href}
+                    href={cta.href}
+                    event={index === 0 ? (page.kind === "comparison" ? ANALYTICS_EVENTS.comparisonCta : ANALYTICS_EVENTS.primaryCta) : ANALYTICS_EVENTS.navigationCta}
+                    eventDetail={{ placement: "page_hero", destination: cta.href }}
+                    className={index === 0 ? "rounded-full bg-violet px-6 py-3.5 font-extrabold text-white shadow-[var(--shadow-hard)] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none" : "rounded-full border-2 border-ink px-6 py-3.5 font-extrabold transition hover:bg-card"}
                   >
-                    {c.label} <span aria-hidden>→</span>
+                    {cta.label} <span aria-hidden>→</span>
                   </TrackedLink>
                 ))}
               </div>
@@ -107,26 +104,35 @@ export function PageTemplate({ page }: { page: SitePage }) {
         </div>
       </section>
 
-      {/* Body blocks */}
       <PageBlocks blocks={page.blocks} />
 
-      {/* Related links */}
+      <section className="border-t border-black/10 bg-card">
+        <div className="mx-auto max-w-6xl px-5 py-8 lg:px-8">
+          <aside className="source-note max-w-3xl" aria-labelledby="source-note-title">
+            <p id="source-note-title" className="text-xs font-extrabold uppercase tracking-[0.16em] text-violet">Source and verification note</p>
+            <p className="mt-2 text-sm text-muted">
+              Product capability statements marked verified are based on the <a href={OFFICIAL_PRODUCT_URL} rel="noopener noreferrer" className="font-semibold text-violet hover:underline">official InstaDoodle website</a>. Plans, pricing, availability, guarantees, and competitor details can change; confirm them with the relevant provider before deciding.
+            </p>
+          </aside>
+        </div>
+      </section>
+
       {page.related.length > 0 && (
         <section className="border-t border-black/10 bg-ink text-white">
-          <div className="mx-auto max-w-6xl px-5 py-12 lg:px-8">
-            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-lavender">Keep exploring</p>
+          <nav aria-label="Related guides" className="mx-auto max-w-6xl px-5 py-12 lg:px-8">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-lavender">Continue your research</p>
+            <h2 className="mt-2 text-2xl font-black">Related guides for the next decision</h2>
             <div className="mt-6 grid gap-3 md:grid-cols-3">
               {page.related.map((href) => (
-                <Link key={href} href={href} className="flex items-center justify-between rounded-xl border border-white/20 px-5 py-5 font-bold transition hover:border-magenta hover:bg-white/10">
+                <Link key={href} href={href} className="flex min-h-14 items-center justify-between rounded-xl border border-white/20 px-5 py-4 font-bold transition hover:border-magenta hover:bg-white/10">
                   {labels[href] ?? href} <span aria-hidden className="text-magenta">↗</span>
                 </Link>
               ))}
             </div>
-          </div>
+          </nav>
         </section>
       )}
 
-      {/* CTA band */}
       <CtaBand
         eyebrow={page.cta.eyebrow ?? "Next step"}
         title={page.cta.title}

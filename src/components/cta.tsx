@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { AffiliateLink } from "./affiliate-link";
+import { AffiliateOfferCta } from "./affiliate-link";
 import { TrackedLink } from "./tracked-link";
 import { ANALYTICS_EVENTS, type AnalyticsEvent } from "@/lib/analytics";
 
-/** Substantial closing CTA. Always shows a useful internal next step;
- *  the external official-offer button only renders when the affiliate
- *  URL is configured (fails safe). */
+/**
+ * A closing CTA always provides an internal next step. The external offer and
+ * its adjacent disclosure appear only after an approved affiliate URL is set.
+ */
 export function CtaBand({
   eyebrow = "Next step",
   title,
@@ -41,28 +42,25 @@ export function CtaBand({
                 href={primaryHref}
                 event={primaryEvent}
                 eventDetail={{ placement }}
-                className="rounded-full bg-white px-6 py-3 font-extrabold text-ink transition hover:bg-magenta hover:text-white"
+                className="min-h-12 rounded-full bg-white px-6 py-3 font-extrabold text-ink transition hover:bg-magenta hover:text-white"
               >
                 {primaryLabel} <span aria-hidden>→</span>
               </TrackedLink>
               {secondaryHref && secondaryLabel && (
                 <Link
                   href={secondaryHref}
-                  className="rounded-full border-2 border-white/60 px-6 py-3 font-extrabold text-white transition hover:border-white hover:bg-white/10"
+                  className="min-h-12 rounded-full border-2 border-white/60 px-6 py-3 font-extrabold text-white transition hover:border-white hover:bg-white/10"
                 >
                   {secondaryLabel}
                 </Link>
               )}
-              <AffiliateLink
+              <AffiliateOfferCta
                 placement={`${placement}_offer`}
-                className="rounded-full border-2 border-white px-6 py-3 font-extrabold text-white transition hover:bg-white hover:text-ink"
-              >
-                Check the official offer <span aria-hidden>↗</span>
-              </AffiliateLink>
+                className="min-h-12 rounded-full border-2 border-white px-6 py-3 font-extrabold text-white transition hover:bg-white hover:text-ink"
+              />
             </div>
             <p className="mx-auto mt-6 max-w-lg text-xs text-white/55">
-              This is an independent guide, not the official InstaDoodle website. Verify current features, pricing and
-              terms on the official offer page.
+              This is an independent guide, not the official InstaDoodle website. Verify current features, pricing, and terms on the official offer page.
             </p>
           </div>
         </div>

@@ -2,32 +2,34 @@
 
 import { ANALYTICS_EVENTS, trackEvent } from "@/lib/analytics";
 
-interface AffiliateLinkProps {
+interface AffiliateOfferCtaProps {
   className?: string;
-  children: React.ReactNode;
   placement: string;
 }
 
 /**
- * Environment-gated affiliate CTA.
- * Renders nothing until NEXT_PUBLIC_AFFILIATE_URL (an approved HopLink) is set,
- * so the guide ships with affiliate actions safely disabled.
- * Opens the external official offer in a new tab and fires the affiliate
- * analytics event before the browser hands off to the new tab.
+ * Environment-gated commercial CTA. The button and its adjacent disclosure
+ * render together only when an approved destination is configured.
  */
-export function AffiliateLink({ className, children, placement }: AffiliateLinkProps) {
+export function AffiliateOfferCta({ className, placement }: AffiliateOfferCtaProps) {
   const href = process.env.NEXT_PUBLIC_AFFILIATE_URL;
   if (!href) return null;
+
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="sponsored nofollow noopener"
-      className={className}
-      onClick={() => trackEvent(ANALYTICS_EVENTS.affiliateLink, { placement })}
-    >
-      {children}
-      <span className="sr-only"> (opens the official site in a new tab)</span>
-    </a>
+    <div className="flex basis-full flex-col items-center gap-2 sm:basis-auto">
+      <a
+        href={href}
+        target="_blank"
+        rel="sponsored nofollow noopener"
+        className={className}
+        onClick={() => trackEvent(ANALYTICS_EVENTS.affiliateLink, { placement })}
+      >
+        Check the official offer <span aria-hidden>↗</span>
+        <span className="sr-only"> (opens the official site in a new tab)</span>
+      </a>
+      <p className="max-w-56 text-center text-[11px] leading-4 text-white/65">
+        Affiliate disclosure: this link may earn this independent guide a commission at no extra cost to you.
+      </p>
+    </div>
   );
 }

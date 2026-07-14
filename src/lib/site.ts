@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
 import type { Block } from "./content";
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
-export const IS_SITE_URL_CONFIGURED = Boolean(process.env.NEXT_PUBLIC_SITE_URL);
+export const SITE_NAME = "Independent InstaDoodle Guide";
+export const SITE_DESCRIPTION =
+  "An independent guide to InstaDoodle's AI-powered whiteboard animation and doodle video creation workflow.";
+export const DEFAULT_SITE_URL = "https://independent-insta-doodles-guide.vercel.app";
+export const OFFICIAL_PRODUCT_URL = "https://instadoodle.com";
+
+function normalizeSiteUrl(value: string) {
+  try {
+    return new URL(value).origin;
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+}
+
+// The deployed Vercel URL is a safe public canonical fallback. Configure
+// NEXT_PUBLIC_SITE_URL when a custom production domain is available.
+export const SITE_URL = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL);
 
 export type PageKind = "hub" | "commercial" | "comparison" | "legal" | "company";
 
@@ -1361,7 +1376,7 @@ export function pageMetadata(page: SitePage): Metadata {
     title: page.title,
     description: page.description,
     alternates: { canonical: path },
-    robots: page.noindex || !IS_SITE_URL_CONFIGURED ? { index: false, follow: true } : { index: true, follow: true },
+    robots: page.noindex ? { index: false, follow: true } : { index: true, follow: true },
     openGraph: { title: page.title, description: page.description, url: path, type: "website" },
     twitter: { card: "summary_large_image", title: page.title, description: page.description },
   };
