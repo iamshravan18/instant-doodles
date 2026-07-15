@@ -10,7 +10,7 @@ const groups = [
     links: [
       ["Features", "/features"],
       ["Use cases", "/use-cases"],
-      ["Samples", "/samples"],
+      ["Examples", "/examples"],
       ["Resources", "/resources"],
     ],
   },

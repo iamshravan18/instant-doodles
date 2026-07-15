@@ -2,7 +2,7 @@
 
 _Re-verified 2026-07-13 against the current build. The `public/images/instadoodle/` tree holds 20 WebP files: 18 rendered (section 1) and 2 defined-but-unused (section 2). A repository-wide reference search confirmed the rendered/unused split below is current; render probing found all rendered images load with descriptive alt text and zero failed image requests across all 21 routes._
 
-This independent guide stores every product visual locally (all WebP) and serves it with `next/image`; it does **not** hotlink the vendor. Public availability of an image is **not** proof that an independent site may reuse it.
+Existing product visuals in this independent guide are stored locally (all WebP) and served with `next/image`. The three owner-supplied official assets added for the examples experience are loaded only through a restricted `next/image` `remotePatterns` rule for `https://instadoodle.com/images/**`; they retain fixed presentation frames to avoid layout shift. Public availability of an image is **not** proof that an independent site may reuse it.
 
 > **LAUNCH BLOCKER — artwork permission.** Written permission from the rightsholder (InstaDoodle / vendor) to reuse official InstaDoodle artwork must be confirmed by the site owner before launch. Every rendered visual below is official or product-derived and is blocked on that confirmation. Where the exact provenance of a locally optimized derivative is not yet verified, this is stated explicitly and requires owner confirmation.
 
@@ -244,3 +244,16 @@ These files must not be described as displayed. Confirmed with a repository-wide
 ---
 
 No visual in this document is a testimonial, customer photograph, rating, price, guarantee, or non-vendor third-party logo. **Do not launch** using these visuals until the owner confirms written reuse permission and the exact provenance of every local derivative/optimized file.
+
+
+## 4. Owner-supplied remote assets for the examples enhancement
+
+The following URLs were supplied by the project owner for this enhancement. They are rendered with `next/image` through the strict `https://instadoodle.com/images/**` remote pattern and framed with a fixed CSS aspect ratio before loading.
+
+| Asset | Official source URL | Current placement | Purpose |
+| --- | --- | --- | --- |
+| `join.webp` | `https://instadoodle.com/images/join.webp` | Homepage hero | Supports the product-workflow introduction without replacing the editor preview. |
+| `box1.webp` | `https://instadoodle.com/images/box1.webp` | Features guide and Examples hub final CTA | Supports feature evaluation and the examples-hub next step. |
+| `option3.webp` | `https://instadoodle.com/images/option3.webp` | Plans guide | Supports the plan-research checklist without making a price or offer claim. |
+
+> **Reuse status remains launch-blocked.** The owner must confirm written permission from the rightsholder before launch. This record documents owner-supplied source URLs and placement; it does not itself establish a license.

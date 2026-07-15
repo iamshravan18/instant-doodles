@@ -2,6 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   turbopack: { root: process.cwd() },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "instadoodle.com",
+        port: "",
+        pathname: "/images/**",
+        search: "",
+      },
+    ],
+    qualities: [75],
+  },
   async redirects() {
     return [
       { source: "/blog/privacy", destination: "/privacy", permanent: true },

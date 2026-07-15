@@ -15,6 +15,11 @@ const labels: Record<string, string> = {
   "/use-cases": "Use cases",
   "/alternatives": "Comparison guide",
   "/resources": "Resources",
+  "/examples": "Examples",
+  "/examples/marketing": "Marketing examples",
+  "/examples/business-owners": "Business-owner examples",
+  "/examples/content-creators": "Content-creator examples",
+  "/examples/nonprofits": "Nonprofit examples",
   "/samples": "Samples",
   "/pricing": "Plans",
   "/about": "About",
@@ -43,7 +48,9 @@ const heroTone: Record<SitePage["kind"], string> = {
 
 export function PageTemplate({ page }: { page: SitePage }) {
   const path = `/${page.slug.join("/")}`;
-  const isComparisonChild = page.slug.length > 1 && page.slug[0] === "alternatives";
+  const parentHub = page.slug.length > 1 && ["alternatives", "examples"].includes(page.slug[0]);
+  const parentHubPath = parentHub ? `/${page.slug[0]}` : null;
+  const parentHubLabel = page.slug[0] === "alternatives" ? "Comparison guide" : "Examples";
   const schema = pageStructuredData(page);
   const ctaEvent =
     path === "/pricing"
@@ -59,10 +66,10 @@ export function PageTemplate({ page }: { page: SitePage }) {
       <nav aria-label="Breadcrumb" className="border-b border-black/10 bg-card">
         <ol className="mx-auto flex max-w-6xl flex-wrap items-center px-5 py-3 text-sm text-muted lg:px-8">
           <li><Link href="/" className="hover:text-violet">Home</Link></li>
-          {isComparisonChild && (
+          {parentHub && parentHubPath && (
             <>
               <li className="mx-2" aria-hidden>/</li>
-              <li><Link href="/alternatives" className="hover:text-violet">Comparison guide</Link></li>
+              <li><Link href={parentHubPath} className="hover:text-violet">{parentHubLabel}</Link></li>
             </>
           )}
           <li className="mx-2" aria-hidden>/</li>
@@ -137,6 +144,8 @@ export function PageTemplate({ page }: { page: SitePage }) {
         eyebrow={page.cta.eyebrow ?? "Next step"}
         title={page.cta.title}
         body={page.cta.body}
+        visualImage={page.cta.visualImage}
+        visualAlt={page.cta.visualAlt}
         primaryHref={page.cta.primaryHref}
         primaryLabel={page.cta.primaryLabel}
         primaryEvent={ctaEvent}

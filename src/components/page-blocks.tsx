@@ -4,7 +4,9 @@ import type { Block } from "@/lib/content";
 import { MEDIA } from "@/lib/media";
 import { ComparisonTable } from "./comparison-table";
 import { FaqList } from "./faq";
+import { OfficialProductImage } from "./official-product-image";
 import { Reveal, Stagger, StaggerItem } from "./motion";
+import { VimeoVideo } from "./vimeo-video";
 import { Callout, Card, Eyebrow, Pill, SceneFrame, Section, SectionHeading } from "./ui";
 
 type Tone = "paper" | "card" | "lavender";
@@ -195,6 +197,42 @@ export function PageBlocks({ blocks }: { blocks: Block[] }) {
                   {block.heading && <SectionHeading className="mb-6 max-w-3xl">{block.heading}</SectionHeading>}
                   <ComparisonTable caption={block.caption} altName={block.altName} rows={block.rows} />
                 </Reveal>
+              </Section>
+            );
+
+          case "vimeo":
+            return (
+              <Section key={key} id={block.anchor} tone={tone} bordered={bordered}>
+                <div className="grid items-center gap-9 lg:grid-cols-[0.85fr_1.15fr]">
+                  <Reveal>
+                    <Eyebrow tone="magenta">Watch an example</Eyebrow>
+                    <SectionHeading underline className="mt-3">{block.heading}</SectionHeading>
+                    {block.intro && <p className="mt-5 max-w-xl text-muted">{block.intro}</p>}
+                    {block.ctaHref && block.ctaLabel && (
+                      <Link href={block.ctaHref} className="mt-6 inline-flex font-bold text-violet hover:underline">
+                        {block.ctaLabel} <span aria-hidden className="ml-1">→</span>
+                      </Link>
+                    )}
+                  </Reveal>
+                  <Reveal delay={0.08} y={22}>
+                    <VimeoVideo video={block.video} />
+                  </Reveal>
+                </div>
+              </Section>
+            );
+
+          case "officialImage":
+            return (
+              <Section key={key} id={block.anchor} tone={tone} bordered={bordered}>
+                <div className="grid items-center gap-10 lg:grid-cols-2">
+                  <Reveal className={block.reverse ? "lg:order-2" : ""}>
+                    <SectionHeading underline>{block.heading}</SectionHeading>
+                    <Paragraphs body={block.body} className="mt-5" />
+                  </Reveal>
+                  <Reveal delay={0.08} y={22} className={block.reverse ? "lg:order-1" : ""}>
+                    <OfficialProductImage image={block.image} alt={block.alt} />
+                  </Reveal>
+                </div>
               </Section>
             );
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { Block } from "./content";
+import { examplePages } from "./example-pages";
 
 export const SITE_NAME = "Independent InstaDoodle Guide";
 export const SITE_DESCRIPTION =
@@ -30,6 +31,8 @@ export interface PageCta {
   eyebrow?: string;
   title: string;
   body?: string;
+  visualImage?: "join" | "box" | "option";
+  visualAlt?: string;
   primaryHref: string;
   primaryLabel: string;
   secondaryHref?: string;
@@ -81,6 +84,17 @@ const pages: SitePage[] = [
           "Because each scene is self-contained, revising a video usually means editing a single scene rather than re-shooting or re-rendering everything. That makes updates practical when a message or process changes.",
         ],
         bullets: ["Drag-and-drop placement of characters, props and backgrounds", "Per-scene timing and reveal order", "Edit one scene without rebuilding the whole video"],
+      },
+      {
+        type: "officialImage",
+        heading: "A visual reference for the workflow",
+        body: [
+          "The editor matters most when it helps a script become a sequence of manageable scenes. Use this official product visual as a reference point while you compare the workflow details above with the features you would actually need.",
+          "As with every product image in this guide, confirm current feature availability and plan limits on the official offer page before deciding.",
+        ],
+        image: "box",
+        alt: "Official InstaDoodle product visual supporting the guide's feature overview",
+        reverse: true,
       },
       {
         type: "featureGrid",
@@ -1179,6 +1193,16 @@ const pages: SitePage[] = [
         ],
       },
       {
+        type: "officialImage",
+        heading: "Keep plan research grounded in current details",
+        body: [
+          "This official product visual supports the decision framework, not a price claim. Use it as a prompt to collect the current plan information from the official offer before choosing a workflow.",
+          "The visual does not replace written plan terms, commercial licensing details, or refund conditions. Verify each of those directly with the provider.",
+        ],
+        image: "option",
+        alt: "Official InstaDoodle product visual accompanying the plan-research checklist",
+      },
+      {
         type: "checklist",
         heading: "Verify these before you buy",
         items: [
@@ -1365,6 +1389,7 @@ const pages: SitePage[] = [
       secondaryLabel: "Back to home",
     },
   },
+  ...examplePages,
 ];
 
 export const pageByPath = new Map(pages.map((page) => [page.slug.join("/"), page]));
@@ -1372,13 +1397,26 @@ export const allPages = pages;
 
 export function pageMetadata(page: SitePage): Metadata {
   const path = `/${page.slug.join("/")}`;
+  const socialAlt = `${page.title} | ${SITE_NAME}`;
+
   return {
     title: page.title,
     description: page.description,
     alternates: { canonical: path },
     robots: page.noindex ? { index: false, follow: true } : { index: true, follow: true },
-    openGraph: { title: page.title, description: page.description, url: path, type: "website" },
-    twitter: { card: "summary_large_image", title: page.title, description: page.description },
+    openGraph: {
+      title: page.title,
+      description: page.description,
+      url: path,
+      type: "website",
+      images: [{ url: absoluteUrl("/opengraph-image"), width: 1200, height: 630, alt: socialAlt }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
+      images: [{ url: absoluteUrl("/twitter-image"), alt: socialAlt }],
+    },
   };
 }
 

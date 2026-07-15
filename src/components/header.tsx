@@ -12,7 +12,7 @@ const NAV = [
   ["Features", "/features"],
   ["Use cases", "/use-cases"],
   ["Compare", "/alternatives"],
-  ["Samples", "/samples"],
+  ["Examples", "/examples"],
   ["Resources", "/resources"],
   ["Search", "/search"],
 ] as const;

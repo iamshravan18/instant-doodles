@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta";
+import { OfficialProductImage } from "@/components/official-product-image";
 import { FaqList } from "@/components/faq";
 import { JsonLd } from "@/components/json-ld";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 import { TrackedLink } from "@/components/tracked-link";
+import { VimeoVideo } from "@/components/vimeo-video";
 import { Callout, Card, Eyebrow, Pill, SceneFrame, Section, SectionHeading, SketchUnderline } from "@/components/ui";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
 import { homeStructuredData } from "@/lib/schema";
@@ -128,6 +130,12 @@ export default function Home() {
                 label="instadoodle · scene editor"
                 sizes="(min-width: 1024px) 52vw, 100vw"
               />
+              <OfficialProductImage
+                image="join"
+                alt="Official InstaDoodle product visual supporting the guide's video-creation overview"
+                className="mt-5"
+                sizes="(min-width: 1024px) 42vw, 100vw"
+              />
             </div>
           </Reveal>
         </div>
@@ -227,6 +235,32 @@ export default function Home() {
             </StaggerItem>
           ))}
         </Stagger>
+      </Section>
+
+      {/* Product demo · a practical view of the workflow after the three-step explanation */}
+      <Section tone="paper">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.86fr_1.14fr]">
+          <Reveal>
+            <Eyebrow tone="magenta">See the workflow in context</Eyebrow>
+            <SectionHeading underline className="mt-3">Watch the editor after you understand the scene sequence.</SectionHeading>
+            <p className="mt-5 max-w-xl text-muted">
+              The three-step workflow above is easier to evaluate with a real demonstration in view. This official demo is
+              placed here deliberately: first decide what a clear scene sequence needs to do, then watch how the
+              product workflow supports that sequence. It is not a substitute for checking current plan details.
+            </p>
+            <TrackedLink
+              href="/examples"
+              event={ANALYTICS_EVENTS.navigationCta}
+              eventDetail={{ placement: "home_demo_video" }}
+              className="mt-6 inline-flex font-bold text-violet hover:underline"
+            >
+              Explore examples by audience <span aria-hidden className="ml-1">→</span>
+            </TrackedLink>
+          </Reveal>
+          <Reveal delay={0.08} y={22}>
+            <VimeoVideo video="demo" />
+          </Reveal>
+        </div>
       </Section>
 
       {/* 11 · Image-to-sketch */}
@@ -340,7 +374,7 @@ export default function Home() {
               <Eyebrow>Example categories</Eyebrow>
               <SectionHeading className="mt-3">What people build with it.</SectionHeading>
             </div>
-            <Link href="/samples" className="font-bold text-violet hover:underline">View InstaDoodle examples <span aria-hidden>→</span></Link>
+            <Link href="/examples" className="font-bold text-violet hover:underline">View InstaDoodle examples <span aria-hidden>→</span></Link>
           </div>
         </Reveal>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -386,6 +420,40 @@ export default function Home() {
                   <li key={s} className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-magenta">•</span><span>{s}</span></li>
                 ))}
               </ul>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Official overview · a trust-first next step after the assessment */}
+      <Section tone="paper">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.14fr_0.86fr]">
+          <Reveal>
+            <VimeoVideo
+              video="sale"
+              caption="An official InstaDoodle overview video. Watch it after reviewing the workflow, strengths, and limitations above, then verify current offer details directly."
+            />
+          </Reveal>
+          <Reveal delay={0.08}>
+            <Eyebrow tone="magenta">Explore before you decide</Eyebrow>
+            <SectionHeading underline className="mt-3">A product overview belongs after the evaluation, not before it.</SectionHeading>
+            <p className="mt-5 max-w-xl text-muted">
+              This official overview is a useful next step once you know the kind of explanation you need to make. Use
+              it to compare the workflow with your own script, then continue to the examples hub for audience-specific
+              planning ideas or the feature guide for detailed capability research.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <TrackedLink
+                href="/examples"
+                event={ANALYTICS_EVENTS.navigationCta}
+                eventDetail={{ placement: "home_overview_video" }}
+                className="inline-flex font-bold text-violet hover:underline"
+              >
+                Explore the examples hub <span aria-hidden className="ml-1">→</span>
+              </TrackedLink>
+              <Link href="/features" className="inline-flex font-bold text-violet hover:underline">
+                Review the feature guide <span aria-hidden className="ml-1">→</span>
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -438,7 +506,7 @@ export default function Home() {
         body="Read the workflow guide, explore examples, or check the current offer on the official site."
         primaryHref="/whiteboard-animation-software"
         primaryLabel="Read the workflow guide"
-        secondaryHref="/samples"
+        secondaryHref="/examples"
         secondaryLabel="View examples"
         placement="home_final"
       />

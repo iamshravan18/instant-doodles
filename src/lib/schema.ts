@@ -96,7 +96,9 @@ function faqItemsFromBlocks(blocks: Block[]): FaqItem[] {
 export function pageStructuredData(page: SitePage): SchemaNode {
   const path = `/${page.slug.join("/")}`;
   const pageUrl = absoluteUrl(path);
-  const isComparisonChild = page.slug.length > 1 && page.slug[0] === "alternatives";
+  const parentHub = page.slug.length > 1 && ["alternatives", "examples"].includes(page.slug[0]);
+  const parentHubName = page.slug[0] === "alternatives" ? "Comparison guide" : "Examples";
+  const parentHubPath = parentHub ? `/${page.slug[0]}` : null;
   const faq = faqPageSchema(faqItemsFromBlocks(page.blocks));
 
   return {
@@ -106,19 +108,19 @@ export function pageStructuredData(page: SitePage): SchemaNode {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl() },
-          ...(isComparisonChild
+          ...(parentHub && parentHubPath
             ? [
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: "Comparison guide",
-                  item: absoluteUrl("/alternatives"),
+                  name: parentHubName,
+                  item: absoluteUrl(parentHubPath),
                 },
               ]
             : []),
           {
             "@type": "ListItem",
-            position: isComparisonChild ? 3 : 2,
+            position: parentHub ? 3 : 2,
             name: page.title,
             item: pageUrl,
           },
