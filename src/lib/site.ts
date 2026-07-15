@@ -8,6 +8,9 @@ export const SITE_DESCRIPTION =
 export const DEFAULT_SITE_URL = "https://independent-insta-doodles-guide.vercel.app";
 export const OFFICIAL_PRODUCT_URL = "https://instadoodle.com";
 
+// Official InstaDoodle product support (Help Center). Canonical URL, no tracking params.
+export const INSTADOODLE_HELP_CENTER_URL = "https://help.instadoodle.com/";
+
 function normalizeSiteUrl(value: string) {
   try {
     return new URL(value).origin;
@@ -50,6 +53,8 @@ export interface SitePage {
   primaryKeyword: string;
   related: string[];
   noindex?: boolean;
+  /** When true, render the author byline (E-E-A-T) and emit Person authorship in schema. */
+  showAuthor?: boolean;
   heroCtas?: HeroCta[];
   blocks: Block[];
   cta: PageCta;
@@ -68,6 +73,7 @@ const pages: SitePage[] = [
     h1: "Every feature that turns an idea into a doodle video",
     eyebrow: "Features",
     primaryKeyword: "whiteboard animation features",
+    showAuthor: true,
     intro:
       "InstaDoodle combines AI doodle generation, a searchable asset library, scene-based editing, voiceover and cloud rendering in one browser workspace. Here is what each part does and who benefits from it.",
     heroCtas: [
@@ -187,6 +193,7 @@ const pages: SitePage[] = [
     h1: "Where a doodle video actually earns its place",
     eyebrow: "Use cases",
     primaryKeyword: "whiteboard animation use cases",
+    showAuthor: true,
     intro:
       "Whiteboard animation works when an audience needs a concept broken into clear, memorable steps. These use cases each pair a communication problem with a realistic scene structure — and an honest note on where the format has limits.",
     heroCtas: [
@@ -401,6 +408,7 @@ const pages: SitePage[] = [
     h1: "Plan the video before you open the editor",
     eyebrow: "Resources",
     primaryKeyword: "whiteboard animation resources",
+    showAuthor: true,
     intro:
       "A useful video is decided before any doodle is drawn. These planning resources cover the decisions — script, scenes, pacing, sound and delivery — that make the editor time productive.",
     heroCtas: [
@@ -484,6 +492,7 @@ const pages: SitePage[] = [
     h1: "Whiteboard animation software for ideas that need to be understood",
     eyebrow: "Whiteboard animation",
     primaryKeyword: "whiteboard animation software",
+    showAuthor: true,
     intro:
       "Whiteboard animation gives an idea a natural pace: introduce a point, draw it into view, move on. InstaDoodle is browser-based software that builds that effect scene by scene, with AI to help you start faster.",
     heroCtas: [
@@ -565,6 +574,7 @@ const pages: SitePage[] = [
     h1: "AI whiteboard animation that starts with your idea",
     eyebrow: "AI workflow",
     primaryKeyword: "AI whiteboard animation",
+    showAuthor: true,
     intro:
       "AI can shorten the distance between a rough idea and a usable scene. InstaDoodle's DoodleAI™ engine and image-to-sketch tools generate doodle building blocks from text and images — while you keep control of the message.",
     heroCtas: [
@@ -635,6 +645,7 @@ const pages: SitePage[] = [
     h1: "A doodle video creator for turning a message into motion",
     eyebrow: "Doodle video creator",
     primaryKeyword: "doodle video creator",
+    showAuthor: true,
     intro:
       "A doodle video gives a message one continuous visual thread. InstaDoodle is built for creators who want that thread without advanced drawing or animation skills.",
     heroCtas: [
@@ -695,6 +706,7 @@ const pages: SitePage[] = [
     h1: "Make a whiteboard video without making the process complicated",
     eyebrow: "Whiteboard video maker",
     primaryKeyword: "whiteboard video maker",
+    showAuthor: true,
     intro:
       "A whiteboard video maker should make it easier to move from message to finished sequence. InstaDoodle organizes that work around a script, scenes and a clear editing flow.",
     heroCtas: [
@@ -757,6 +769,7 @@ const pages: SitePage[] = [
     h1: "Create educational videos that make complex topics easier to learn",
     eyebrow: "For education",
     primaryKeyword: "educational video maker",
+    showAuthor: true,
     intro:
       "Educational videos work best when learners can watch an idea develop. InstaDoodle helps teachers, students, trainers and course creators turn a lesson plan into an illustrated sequence.",
     heroCtas: [
@@ -820,6 +833,7 @@ const pages: SitePage[] = [
     h1: "Training video software for messages people can follow",
     eyebrow: "For training",
     primaryKeyword: "training video software",
+    showAuthor: true,
     intro:
       "Training is easier to revisit when instruction is presented as a simple visual sequence. InstaDoodle supports teams and trainers creating explainers, process overviews and onboarding videos.",
     heroCtas: [
@@ -1521,81 +1535,327 @@ const pages: SitePage[] = [
     slug: ["about"],
     kind: "company",
     title: "About This Independent InstaDoodle Guide",
-    description: "How this independent guide researches InstaDoodle, what it will and will not publish, and how affiliate links work.",
+    description:
+      "Who runs this independent InstaDoodle guide, its editorial mission, how products are researched and compared, its independence and affiliate policy, and how information is kept accurate and up to date.",
     h1: "About this independent InstaDoodle guide",
     eyebrow: "About this guide",
-    primaryKeyword: "about InstaDoodle",
+    primaryKeyword: "about InstaDoodle guide",
+    showAuthor: true,
     intro:
-      "This is an independent guide to InstaDoodle, an AI-assisted whiteboard animation and doodle video tool. It is not the official InstaDoodle website and is not operated by the vendor.",
-    heroCtas: [{ href: "/features", label: "Explore the features" }],
+      "This is an independent editorial guide to InstaDoodle, an AI-assisted whiteboard animation and doodle video tool. It is created and maintained by Shravan Gupta and is not the official InstaDoodle website, nor is it operated by the vendor.",
+    heroCtas: [
+      { href: "/editorial-policy", label: "Read the editorial policy" },
+      { href: "/features", label: "Explore the features" },
+    ],
     blocks: [
       {
         type: "prose",
-        heading: "What we publish",
+        heading: "Who created this guide",
         body: [
-          "We describe what the product does using verified public information from the official InstaDoodle site and documented firsthand inspection, clearly separating verified facts from editorial interpretation.",
-          "We do not publish invented prices, guarantees, ratings, customer numbers, testimonials or competitor claims. Where a detail is time-sensitive, we point you to the official offer page instead of restating it.",
+          "The Independent InstaDoodle Guide is written and edited by Shravan Gupta, a digital marketing and affiliate marketing specialist. He researches whiteboard-animation and doodle-video software, then turns that research into practical, plain-language guidance for people deciding whether a tool fits the videos they need to make.",
+          "One person is accountable for what appears here. That means every guide has a named editor responsible for its accuracy, its sources, and the clear labelling of opinion versus fact — not an anonymous content pipeline.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Why this guide exists",
+        body: [
+          "Most information about whiteboard-animation tools is either the vendor's own marketing or thin, affiliate-first content that restates prices and ratings it cannot verify. This guide exists to sit in between: an independent, workflow-first explanation of what InstaDoodle actually does, who it suits, and where it has limits.",
+          "The goal is to help you make a confident decision and then verify the time-sensitive details — price, plan limits, guarantees — directly with the vendor, rather than trusting a figure that may already be out of date.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Our editorial mission",
+        body: [
+          "To be the most useful independent reference on InstaDoodle and doodle-video workflows by explaining them honestly: what the product does well, where a doodle format is the wrong choice, and what to confirm before you buy.",
+          "We measure a page by whether it helps you make a better decision, not by whether it pushes a click. Guidance leads; any commercial link follows the explanation.",
         ],
       },
       {
         type: "cards",
-        heading: "How to read this guide",
+        heading: "How we research and write",
+        intro: "The same method sits behind every guide, comparison, and example on this site.",
         items: [
-          { title: "Verified", body: "Facts drawn from the official site or direct inspection are marked as verified." },
-          { title: "Editorial", body: "Our interpretation of how features map to jobs is labelled as editorial." },
-          { title: "Verify", body: "Anything that changes — pricing, limits, guarantees — is flagged to confirm on the official offer page." },
+          {
+            title: "How products are researched",
+            body: "Capabilities are drawn from official InstaDoodle product information and firsthand inspection of the documented workflow. Anything time-sensitive is treated as something to verify, not to assert.",
+          },
+          {
+            title: "How comparisons are written",
+            body: "Comparisons focus on workflow fit — where a tool runs, how a scene starts, revision cost, output formats and licensing. We do not publish competitor pricing or unverified competitor specifics; we tell you what to confirm with each provider.",
+          },
+          {
+            title: "Verified vs editorial",
+            body: "Verified facts from the official site are labelled as verified; our interpretation of how a feature maps to a job is labelled as editorial, so you always know which is which.",
+          },
+          {
+            title: "What we will not publish",
+            body: "No invented prices, guarantees, ratings, customer counts, testimonials, or fabricated results. If we cannot substantiate a claim, we frame it as a question to verify instead.",
+          },
         ],
       },
       {
-        type: "callout",
-        kind: "editorial",
-        body: "The guide owner's identity, company details and editorial contacts will be published here once supplied and approved. We do not invent them.",
+        type: "checklist",
+        heading: "What you can expect from this guide",
+        intro: "The standards you can hold this guide to on every page.",
+        items: [
+          "A named editor accountable for accuracy",
+          "Verified product facts kept separate from opinion",
+          "Clear affiliate disclosure, with guidance placed before any offer",
+          "No restated competitor pricing or unverified specifics",
+          "Time-sensitive details pointed to the official offer page",
+          "Corrections made promptly when something is wrong",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Editorial independence",
+        body: [
+          "This guide is independent of InstaDoodle and its competitors. No vendor reviews or approves the content before publication, and no commercial relationship changes an assessment. When a competitor is the better fit for a job, the guide says so.",
+          "Editorial decisions — what to cover, what to recommend, and what to warn against — are made on the reader's behalf, not the vendor's.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Affiliate disclosure",
+        body: [
+          "This is an independent guide, not the official InstaDoodle website. Some outbound links may be affiliate links, which can earn the guide a commission at no extra cost to you. Affiliate links appear only after the explanation that justifies them, and they never change the editorial verdict.",
+          "A commission is earned only if you choose to buy — not from which tool you choose — so the assessment stays workflow-first regardless of the outcome.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Our commitment to factual accuracy",
+        body: [
+          "Accuracy is the point of an independent guide. Product capabilities are grounded in official sources, opinion is labelled as opinion, and anything that changes over time is flagged for you to confirm at the source.",
+          "If you find something inaccurate or out of date, a correction request through the contact page is welcome and will be reviewed against the official source.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "How this guide is updated",
+        body: [
+          "Guides are reviewed and refreshed as the product and the wider whiteboard-animation market change. Educational pages carry a visible last-updated date and a named reviewer so you can see how current the guidance is.",
+          "The full review, sourcing, and corrections process is documented on the editorial policy page.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Editorial standards and contact",
+        items: [
+          { title: "Editorial policy", body: "Read the full methodology: review standards, sourcing, independence, updates, and corrections.", href: "/editorial-policy" },
+          { title: "Contact the editorial team", body: "Send an editorial enquiry, a correction, or an affiliate or business question.", href: "/contact" },
+          { title: "How to read the guides", body: "See the features, use cases, and comparisons the methodology is applied to.", href: "/features" },
+        ],
       },
     ],
-    related: ["/features", "/use-cases", "/contact"],
+    related: ["/editorial-policy", "/contact", "/features"],
     cta: {
-      title: "Start with the product workflow.",
-      primaryHref: "/whiteboard-animation-software",
-      primaryLabel: "See the product workflow",
-      secondaryHref: "/alternatives",
-      secondaryLabel: "Compare whiteboard tools",
+      eyebrow: "Editorial standards",
+      title: "See how the guidance is produced.",
+      body: "Read the editorial policy, then explore the product workflow the methodology is applied to.",
+      primaryHref: "/editorial-policy",
+      primaryLabel: "Read the editorial policy",
+      secondaryHref: "/whiteboard-animation-software",
+      secondaryLabel: "See the product workflow",
     },
   },
 
-  /* ─────────────────────────── contact (placeholder, noindex) ─────────────────────────── */
+  /* ─────────────────────────── editorial-policy ─────────────────────────── */
   {
-    slug: ["contact"],
+    slug: ["editorial-policy"],
     kind: "company",
-    title: "Contact This Independent Guide",
-    description: "Contact details for this independent InstaDoodle guide will be published after approval. Product support is handled by the official vendor.",
-    h1: "Contact this independent guide",
-    eyebrow: "Contact",
-    primaryKeyword: "contact InstaDoodle",
+    title: "Editorial Policy",
+    description:
+      "The editorial policy of the Independent InstaDoodle Guide: review methodology, research standards, independence, affiliate disclosure, and how content is updated, corrected and sourced.",
+    h1: "Editorial policy",
+    eyebrow: "Editorial standards",
+    primaryKeyword: "editorial policy",
+    showAuthor: true,
     intro:
-      "An approved contact channel for this independent guide has not been supplied yet, so this page contains no placeholder form or invented address.",
-    noindex: true,
+      "This policy explains how the Independent InstaDoodle Guide researches, writes, updates and corrects its content, and how it stays independent while using affiliate links. It applies to every guide, comparison and example on the site.",
+    heroCtas: [
+      { href: "/about", label: "About this guide" },
+      { href: "/contact", label: "Contact or request a correction" },
+    ],
     blocks: [
       {
         type: "prose",
-        heading: "Product support vs guide contact",
+        heading: "Our editorial approach",
         body: [
-          "For help with an InstaDoodle account, editor or video project, use the official vendor's support channel listed on the official website. This independent guide cannot access vendor accounts.",
-          "A contact route for the guide itself — for corrections or editorial questions — will be added here once the owner supplies an approved address or form.",
+          "Every page is written to help a reader make a decision, then verify the time-sensitive details at the source. Guidance comes first; any commercial link comes after the explanation that supports it.",
+          "Content is produced and reviewed by a named editor, Shravan Gupta, who is accountable for its accuracy and for the clear separation of verified fact from editorial interpretation.",
+        ],
+      },
+      {
+        type: "steps",
+        heading: "Review methodology",
+        intro: "How a guide moves from research to publication.",
+        items: [
+          { title: "Research", body: "Gather product capabilities from official InstaDoodle information and firsthand inspection of the documented workflow, recording what is verifiable and what is time-sensitive." },
+          { title: "Draft and label", body: "Write the guidance, explicitly labelling verified facts, editorial interpretation, and anything the reader should confirm on the official offer page." },
+          { title: "Review and publish", body: "Check claims against sources, confirm affiliate disclosure is present and correctly placed, then publish with a reviewer and last-updated date on educational pages." },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Research standards",
+        items: [
+          { title: "Grounded in sources", body: "Capability statements are based on official product information and direct inspection, not on assumptions or competitor marketing." },
+          { title: "Fact vs interpretation", body: "Verified facts are labelled as verified; how a feature maps to a job is labelled as editorial opinion." },
+          { title: "No fabricated data", body: "We do not publish invented prices, ratings, customer numbers, testimonials, awards, or results." },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Independence",
+        body: [
+          "The guide is editorially independent of InstaDoodle and every competitor mentioned. No vendor previews, approves, or pays for coverage, and no commercial relationship alters an assessment.",
+          "Where a competitor is the better choice for a particular job, the guide states that plainly. Recommendations serve the reader's decision, not a vendor's sales goal.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Affiliate disclosure",
+        body: [
+          "This is an independent guide that may use affiliate links. If you follow one and make a purchase, the guide may earn a commission at no additional cost to you. A commission depends only on whether you buy, never on which product you choose.",
+          "Affiliate links are disclosed on the site and are placed after the guidance that justifies them. They do not influence verdicts, rankings, or which limitations we report.",
+        ],
+      },
+      {
+        type: "checklist",
+        heading: "Updating policy",
+        intro: "How the guide stays current in a market that changes often.",
+        items: [
+          "Educational pages show a visible last-updated date",
+          "Guides are reviewed as the product and market change",
+          "Time-sensitive details link to the official offer page rather than being restated",
+          "Outdated guidance is revised or retired, not left to drift",
+          "A named reviewer is attached to updated educational pages",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Corrections policy",
+        body: [
+          "Accuracy matters more than being first. If a factual error is identified, it is reviewed against the official source and corrected promptly, and a significant correction is noted on the page where it is helpful to readers.",
+          "To report a possible error, use the contact page and include the page and the detail in question. Correction requests are welcome and taken seriously.",
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Sources policy",
+        body: [
+          "Primary sources are the official InstaDoodle website and firsthand inspection of the documented product workflow. Competitor capabilities are described as things to verify with each provider, and competitor pricing is not restated.",
+          "When a claim cannot be verified from a reliable source, it is framed as a question for the reader to confirm rather than presented as fact.",
+        ],
+      },
+      {
+        type: "faq",
+        heading: "Editorial policy questions.",
+        items: [
+          ["Is this the official InstaDoodle website?", "No. This is an independent editorial guide. It is not operated by InstaDoodle, and the vendor does not review or approve its content."],
+          ["Do affiliate links affect your recommendations?", "No. Affiliate links may earn the guide a commission if you buy, but they do not change verdicts, rankings, or the limitations we report. Guidance is written before any commercial link is placed."],
+          ["How do I report an inaccuracy?", "Use the contact page, name the page and the detail in question, and the claim will be reviewed against the official source and corrected if needed."],
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Related pages",
+        items: [
+          { title: "About this guide", body: "Who runs the guide, its mission, and what to expect.", href: "/about" },
+          { title: "Contact and corrections", body: "Editorial, affiliate, and business enquiries, plus how to request a correction.", href: "/contact" },
+          { title: "Affiliate disclosure", body: "See the independence and affiliate notes applied across the site.", href: "/about" },
+        ],
+      },
+    ],
+    related: ["/about", "/contact", "/features"],
+    cta: {
+      eyebrow: "Independent by design",
+      title: "Explore the guidance these standards produce.",
+      body: "See how the methodology is applied across the features, comparisons, and examples.",
+      primaryHref: "/features",
+      primaryLabel: "Explore the features",
+      secondaryHref: "/alternatives",
+      secondaryLabel: "See the comparison guide",
+    },
+  },
+
+  /* ─────────────────────────── contact ─────────────────────────── */
+  {
+    slug: ["contact"],
+    kind: "company",
+    title: "Contact & InstaDoodle Support",
+    description:
+      "How to get official InstaDoodle product support through the InstaDoodle Help Center, and how this independent guide handles accuracy and corrections.",
+    h1: "Contact and InstaDoodle support",
+    eyebrow: "Contact",
+    primaryKeyword: "contact InstaDoodle guide",
+    intro:
+      "This is the contact page for the Independent InstaDoodle Guide, an editorial site created and maintained by Shravan Gupta. For help with the InstaDoodle product itself, the official support channel is the InstaDoodle Help Center.",
+    heroCtas: [
+      { href: "/editorial-policy", label: "Read the editorial policy" },
+      { href: "/about", label: "About this guide" },
+    ],
+    blocks: [
+      {
+        type: "prose",
+        heading: "Official InstaDoodle support",
+        body: [
+          "For help with the InstaDoodle product — account and sign-in issues, billing and plans, technical problems, or how a feature works — the official support channel is the InstaDoodle Help Center, run by the vendor.",
+          "This is an independent editorial guide, not the official InstaDoodle website, so it cannot access InstaDoodle accounts, billing, or projects. For anything about the product itself, the Help Center is the fastest and most reliable route.",
+        ],
+      },
+      {
+        type: "supportCta",
+        heading: "InstaDoodle Help Center",
+        body: "Get official product support, account help, and answers to how-to questions directly from the InstaDoodle team.",
+        href: INSTADOODLE_HELP_CENTER_URL,
+        label: "Visit the Official InstaDoodle Help Center",
+        note: "Opens the official InstaDoodle Help Center in a new tab.",
+      },
+      {
+        type: "cards",
+        heading: "What the Help Center can help with",
+        intro: "Product support is handled by the official InstaDoodle team, not by this independent guide.",
+        items: [
+          { title: "Account & sign-in", body: "Access, login, and account questions for the InstaDoodle app." },
+          { title: "Billing & plans", body: "Subscription, plan, and payment questions handled directly by the vendor." },
+          { title: "Technical help", body: "Problems with the editor, rendering, exports, or uploads." },
+          { title: "Using the editor", body: "How-to questions about scenes, assets, voiceover, and export settings." },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "About this independent guide",
+        body: [
+          "This guide is an independent, editorial resource about InstaDoodle. It is not operated by the vendor and cannot resolve account, billing, or technical issues — those go to the official Help Center above.",
+          "Accuracy is reviewed against official sources, and pages are corrected or updated when something is out of date, in line with the editorial policy. The policy explains how research, sourcing, and corrections are handled across the guide.",
         ],
       },
       {
         type: "callout",
         kind: "editorial",
-        body: "No email address, phone number or form is shown because none has been approved. Publishing placeholder contact details would be misleading.",
+        body: "This is an independent guide, not the official InstaDoodle website. The Help Center linked above is InstaDoodle's official support channel; no postal address or phone number applies to this editorial guide.",
+      },
+      {
+        type: "cards",
+        heading: "Learn more about this guide",
+        items: [
+          { title: "Editorial policy", body: "How the guide researches, writes, updates, and corrects its content.", href: "/editorial-policy" },
+          { title: "About this guide", body: "Who runs the guide, its mission, and its independence and affiliate policy.", href: "/about" },
+          { title: "Verify product details", body: "Pricing, plans, and guarantees are time-sensitive — confirm them on the official offer page.", href: "/pricing" },
+        ],
       },
     ],
-    related: ["/about", "/pricing", "/samples"],
+    related: ["/about", "/editorial-policy", "/features"],
     cta: {
-      title: "Meanwhile, explore the guide.",
+      title: "While you're here, explore the guide.",
       primaryHref: "/features",
       primaryLabel: "Explore the features",
-      secondaryHref: "/samples",
-      secondaryLabel: "View examples",
+      secondaryHref: "/about",
+      secondaryLabel: "About this guide",
     },
   },
 

@@ -37,6 +37,7 @@ const groups = [
     label: "Company",
     links: [
       ["About", "/about"],
+      ["Editorial policy", "/editorial-policy"],
       ["Contact", "/contact"],
       ["Privacy", "/privacy"],
       ["Terms", "/terms"],

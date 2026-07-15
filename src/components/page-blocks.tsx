@@ -320,6 +320,27 @@ export function PageBlocks({ blocks }: { blocks: Block[] }) {
               </Section>
             );
 
+          case "supportCta":
+            return (
+              <Section key={key} id={block.anchor} tone={tone} bordered={bordered} space="tight">
+                <Reveal>
+                  <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[var(--r-xl)] border-2 border-ink bg-card p-8 text-center shadow-[var(--shadow-hard-lavender)]">
+                    <h2 className="text-[length:var(--step-2)] font-black tracking-[-0.02em]">{block.heading}</h2>
+                    {block.body && <p className="max-w-xl text-muted">{block.body}</p>}
+                    <a
+                      href={block.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-1 inline-flex min-h-12 items-center rounded-full bg-violet px-6 py-3 font-extrabold text-white transition hover:bg-ink"
+                    >
+                      {block.label} <span aria-hidden className="ml-1">↗</span>
+                    </a>
+                    {block.note && <p className="text-xs text-muted">{block.note}</p>}
+                  </div>
+                </Reveal>
+              </Section>
+            );
+
           case "offer": {
             // Earned, env-gated conversion point. Renders only when an approved
             // affiliate destination is configured; internal next-step always leads.

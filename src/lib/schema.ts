@@ -1,4 +1,5 @@
 import type { Block } from "./content";
+import { AUTHOR, EDITORIAL_LAST_UPDATED_ISO } from "./author";
 import { imageObject, videoObject, type MediaKey, type VimeoVideoKey } from "./media";
 import {
   absoluteUrl,
@@ -15,6 +16,7 @@ type SchemaNode = Record<string, unknown>;
 const organizationId = `${absoluteUrl()}#organization`;
 const websiteId = `${absoluteUrl()}#website`;
 const softwareId = `${OFFICIAL_PRODUCT_URL}#software`;
+const personId = `${absoluteUrl()}#person`;
 
 export function siteStructuredData(): SchemaNode {
   return {
@@ -26,6 +28,16 @@ export function siteStructuredData(): SchemaNode {
         name: SITE_NAME,
         url: absoluteUrl(),
         description: SITE_DESCRIPTION,
+        founder: { "@id": personId },
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        name: AUTHOR.name,
+        jobTitle: AUTHOR.role,
+        description: AUTHOR.bio,
+        url: absoluteUrl(AUTHOR.path),
+        worksFor: { "@id": organizationId },
       },
       {
         "@type": "WebSite",
@@ -34,6 +46,7 @@ export function siteStructuredData(): SchemaNode {
         url: absoluteUrl(),
         inLanguage: "en",
         publisher: { "@id": organizationId },
+        author: { "@id": personId },
         potentialAction: {
           "@type": "SearchAction",
           target: {
@@ -148,6 +161,9 @@ export function pageStructuredData(page: SitePage): SchemaNode {
         isPartOf: { "@id": websiteId },
         publisher: { "@id": organizationId },
         about: { "@id": softwareId },
+        ...(page.showAuthor
+          ? { author: { "@id": personId }, dateModified: EDITORIAL_LAST_UPDATED_ISO }
+          : {}),
         speakable: {
           "@type": "SpeakableSpecification",
           cssSelector: [".answer-summary"],

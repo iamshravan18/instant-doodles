@@ -5,6 +5,7 @@ import { pageStructuredData } from "@/lib/schema";
 import { JsonLd } from "./json-ld";
 import { CtaBand } from "./cta";
 import { PageBlocks } from "./page-blocks";
+import { AuthorByline } from "./author";
 import { Reveal } from "./motion";
 import { Eyebrow, SketchUnderline } from "./ui";
 import { TrackedLink } from "./tracked-link";
@@ -24,6 +25,7 @@ const labels: Record<string, string> = {
   "/pricing": "Plans",
   "/about": "About",
   "/contact": "Contact",
+  "/editorial-policy": "Editorial policy",
   "/privacy": "Privacy",
   "/terms": "Terms",
   "/whiteboard-animation-software": "Whiteboard animation software",
@@ -110,6 +112,8 @@ export function PageTemplate({ page }: { page: SitePage }) {
           )}
         </div>
       </section>
+
+      {page.showAuthor && <AuthorByline />}
 
       <PageBlocks blocks={page.blocks} />
 

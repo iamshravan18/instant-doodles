@@ -17,4 +17,5 @@ export type Block =
   | { type: "vimeo"; heading: string; intro?: string; video: VimeoVideoKey; ctaHref?: string; ctaLabel?: string; anchor?: string }
   | { type: "officialImage"; heading: string; body: string[]; image: OfficialProductImageKey; alt: string; reverse?: boolean; anchor?: string }
   | { type: "decision"; heading?: string; anchor?: string; verdict: string; altName: string; instadoodle: string[]; instadoodleBestFor: string; alternative: string[]; alternativeBestFor: string; bottomLine?: string }
-  | { type: "offer"; heading: string; body?: string; internalHref: string; internalLabel: string; label?: string; placement: string; anchor?: string };
+  | { type: "offer"; heading: string; body?: string; internalHref: string; internalLabel: string; label?: string; placement: string; anchor?: string }
+  | { type: "supportCta"; heading: string; body?: string; href: string; label: string; note?: string; anchor?: string };
