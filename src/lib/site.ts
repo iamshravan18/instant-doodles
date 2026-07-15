@@ -273,6 +273,7 @@ const pages: SitePage[] = [
         heading: "Our comparison method",
         body: [
           "Feature-count tables reward whoever lists the most checkboxes, not whoever fits your work. We compare on workflow: where the editor runs, how you start a scene, what assets you need, how AI assists creation, and how painful revisions are.",
+          "Our test for every criterion is simple: does it change what you can make, or how hard it is to make it? Criteria that affect daily work are weighted ahead of spec-sheet extras that rarely decide a project.",
           "Competitor features, plans and prices change frequently. We deliberately avoid quoting competitor pricing and instead tell you what to verify directly with each provider before you decide.",
         ],
       },
@@ -289,6 +290,32 @@ const pages: SitePage[] = [
           { dimension: "Revisions", instadoodle: "Edit a single scene without rebuilding the video.", alternative: "See how hard it is to change one step later." },
           { dimension: "Output formats", instadoodle: "16:9, 9:16, 4:5 and square from one project.", alternative: "Verify supported resolutions and aspect ratios." },
           { dimension: "Commercial use", instadoodle: "Commercial licensing is plan-dependent — verify on the offer page.", alternative: "Confirm commercial rights on the plan you would buy." },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "What each criterion means",
+        intro: "Use these to judge any whiteboard tool, not just the three we compare — the reasoning behind each row of the table above.",
+        items: [
+          { title: "Where it runs", body: "Desktop installs tie a project to one machine and OS; browser tools follow you across devices but need a connection. Weigh mobility and IT limits against any offline requirement." },
+          { title: "AI-assisted creation", body: "AI only helps if it produces usable starting points. Judge it by the real time saved after your editing pass, not by whether an 'AI' label exists." },
+          { title: "Asset & scene workflow", body: "A large library helps only when search is fast and editing is scene-based, so you can change one idea without rebuilding the video. Check search and the editing model, not just the element count." },
+          { title: "Revisions", body: "Most videos change after the first cut. The real cost is updating one step later — a single scene edit versus re-rendering a whole timeline." },
+          { title: "Output formats", body: "One project that exports 16:9, 9:16, 4:5 and square serves more channels than a single-ratio tool. Confirm the resolutions and ratios you actually publish in." },
+          { title: "Commercial use", body: "Licensing is where a cheap tool can get expensive. Confirm commercial rights on the exact plan you would buy — not the marketing page." },
+        ],
+      },
+      {
+        type: "checklist",
+        heading: "How we verify — and what we won't publish",
+        intro: "So you can trust the comparison and know its limits.",
+        items: [
+          "Product facts come from the official InstaDoodle site and firsthand inspection.",
+          "Verified facts are kept separate from editorial interpretation.",
+          "We do not publish competitor pricing, ratings, testimonials or unverified specifics.",
+          "Time-sensitive details — price, limits, guarantees — link to the official offer page instead of being restated.",
+          "Competitor capabilities are described as things to verify, not asserted as fact.",
+          "Anything that changes over time is flagged for you to confirm before you buy.",
         ],
       },
       {
