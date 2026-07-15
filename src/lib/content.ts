@@ -4,7 +4,7 @@ export type CalloutKind = "verified" | "editorial" | "verify";
 
 export type Block =
   | { type: "prose"; heading?: string; body: string[]; anchor?: string }
-  | { type: "split"; heading: string; body: string[]; media: MediaKey; reverse?: boolean; bullets?: string[]; anchor?: string }
+  | { type: "split"; heading: string; body: string[]; media: MediaKey; reverse?: boolean; bullets?: string[]; caption?: string; anchor?: string }
   | { type: "featureGrid"; heading?: string; intro?: string; items: { title: string; body: string; media?: MediaKey }[]; anchor?: string }
   | { type: "steps"; heading?: string; intro?: string; items: { title: string; body: string }[]; anchor?: string }
   | { type: "checklist"; heading: string; intro?: string; items: string[]; anchor?: string }

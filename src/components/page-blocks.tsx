@@ -62,7 +62,7 @@ export function PageBlocks({ blocks }: { blocks: Block[] }) {
                     )}
                   </Reveal>
                   <Reveal delay={0.1} y={22} className={block.reverse ? "lg:order-1" : ""}>
-                    <SceneFrame src={m.src} alt={m.alt} width={m.width} height={m.height} label={block.heading.toLowerCase().slice(0, 26)} />
+                    <SceneFrame src={m.src} alt={m.alt} width={m.width} height={m.height} label={block.heading.toLowerCase().slice(0, 26)} caption={block.caption} />
                   </Reveal>
                 </div>
               </Section>

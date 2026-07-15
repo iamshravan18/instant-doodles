@@ -951,6 +951,16 @@ const pages: SitePage[] = [
         ],
       },
       {
+        type: "split",
+        heading: "The AI step you can actually see",
+        media: "imageToSketch",
+        body: [
+          "A concrete example of the browser-plus-AI difference: InstaDoodle redraws an uploaded photo or logo as a doodle, so a real product or brand mark joins your scenes without hand-tracing. This is the kind of AI starting point a traditionally desktop toolset may not offer — verify Doodly's current AI capabilities before assuming parity.",
+        ],
+        bullets: ["Redraws a photo or logo as an on-style doodle", "Generated in the browser — nothing to install"],
+        caption: "InstaDoodle's AI image-to-sketch turning a photo into a hand-drawn doodle — the kind of AI starting point to check for in any alternative.",
+      },
+      {
         type: "cards",
         heading: "Match it to your workflow",
         intro: "Start from the work you actually do, not the feature list.",
@@ -1071,6 +1081,16 @@ const pages: SitePage[] = [
         ],
       },
       {
+        type: "split",
+        heading: "AI styles, not just a library",
+        media: "artStyles",
+        body: [
+          "Where this comparison often turns on library size, AI generation is InstaDoodle's other lever: you describe a scene and pick an AI style — caricature, cartoon, realistic or charcoal — instead of only searching a catalogue. If a large established library is VideoScribe's strength, verify whether it also offers this kind of AI creation before deciding.",
+        ],
+        bullets: ["Generate scene starters from a text prompt", "Switch styles: caricature, cartoon, realistic, charcoal"],
+        caption: "InstaDoodle generating doodles from a prompt across AI styles — the AI-first workflow to weigh against a large asset library.",
+      },
+      {
         type: "cards",
         heading: "Match it to your workflow",
         intro: "Start from the work you actually do, not the feature list.",
@@ -1189,6 +1209,16 @@ const pages: SitePage[] = [
           "This is a specialization-versus-breadth decision, and the trap is choosing on capability count. A broad suite like Animaker can produce many formats, but breadth you never use adds decisions and learning overhead. A focused tool like InstaDoodle removes choices for one job — doodle explainers — and keeps the style consistent. Count the formats you actually ship, not the ones a tool could theoretically make.",
           "If doodle and whiteboard explainers are the majority of your output, a focused, AI-assisted workflow usually gets you there faster and more consistently. If your work genuinely spans 2D character animation, infographics and live-action edits, consolidating in one broad suite may reduce tool-switching — verify Animaker's current doodle depth so the specialized job does not suffer.",
         ],
+      },
+      {
+        type: "split",
+        heading: "A workspace built for one job",
+        media: "sceneEditor",
+        body: [
+          "Specialization shows up in the editor. InstaDoodle's workspace is built around doodle scenes — assets, canvas, timing and export in one place — rather than spanning many animation formats. If most of your work is doodle explainers, that focus is the advantage; if it is not, verify how deep a broad suite like Animaker goes on doodle specifically.",
+        ],
+        bullets: ["One workspace for doodle scenes end to end", "Fewer decisions than a broad multi-format suite"],
+        caption: "InstaDoodle's scene editor — a focused doodle workspace, the specialization to weigh against a broad multi-format suite.",
       },
       {
         type: "cards",

@@ -94,6 +94,17 @@ function faqItemsFromBlocks(blocks: Block[]): FaqItem[] {
   return blocks.flatMap((block) => (block.type === "faq" ? block.items : []));
 }
 
+/** Collect the distinct media keys used by a page's visual blocks. */
+function imageObjectsFromBlocks(blocks: Block[]): SchemaNode[] {
+  const keys: MediaKey[] = [];
+  for (const block of blocks) {
+    if (block.type === "split") keys.push(block.media);
+    else if (block.type === "gallery") for (const item of block.items) keys.push(item.media);
+    else if (block.type === "featureGrid") for (const item of block.items) if (item.media) keys.push(item.media);
+  }
+  return [...new Set(keys)].map((key) => imageObject(key));
+}
+
 export function pageStructuredData(page: SitePage): SchemaNode {
   const path = `/${page.slug.join("/")}`;
   const pageUrl = absoluteUrl(path);
@@ -143,6 +154,7 @@ export function pageStructuredData(page: SitePage): SchemaNode {
         },
       },
       ...howToSchemas(page),
+      ...(page.kind === "comparison" ? imageObjectsFromBlocks(page.blocks) : []),
       ...(faq ? [faq] : []),
     ],
   };
