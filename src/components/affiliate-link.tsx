@@ -26,6 +26,7 @@ export function AffiliateOfferCta({ className, placement, label = "Check the off
         href={href}
         target="_blank"
         rel="sponsored nofollow noopener"
+        data-affiliate-cta
         className={className}
         onClick={() => trackEvent(ANALYTICS_EVENTS.affiliateLink, { placement })}
       >

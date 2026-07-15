@@ -7,6 +7,9 @@ export const ANALYTICS_EVENTS = {
   comparisonCta: "comparison_cta_click",
   finalCta: "final_cta_click",
   contactAction: "contact_action",
+  floatingCtaShow: "floating_cta_show",
+  floatingCtaClick: "floating_cta_click",
+  floatingCtaHide: "floating_cta_hide",
 } as const;
 
 export type AnalyticsEvent = (typeof ANALYTICS_EVENTS)[keyof typeof ANALYTICS_EVENTS];

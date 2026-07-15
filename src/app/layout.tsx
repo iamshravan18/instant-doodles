@@ -3,6 +3,7 @@ import { Manrope, Caveat } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { FloatingAffiliateCTA } from "@/components/floating-affiliate-cta";
 import { JsonLd } from "@/components/json-ld";
 import { siteStructuredData } from "@/lib/schema";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -56,6 +57,7 @@ export default function RootLayout({
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
+        <FloatingAffiliateCTA />
       </body>
     </html>
   );
