@@ -944,10 +944,47 @@ const pages: SitePage[] = [
       },
       {
         type: "prose",
-        heading: "Limitations to weigh",
+        heading: "How the differences play out in practice",
         body: [
-          "InstaDoodle depends on a connection because it is cloud-based, and AI output needs a human editing pass to stay accurate and on-message.",
-          "For Doodly, the main things to confirm are current platform support, library scope and whether the AI-assisted features you want exist today — treat older reviews as potentially out of date.",
+          "The biggest practical gap in this matchup is where the software lives. A browser tool means no install, automatic updates and a project you can open on any machine — but it needs a connection, and an outage stops work. Historically desktop software like Doodly runs locally (verify its current options), which can suit locked-down or offline environments but ties a project to one machine and its update cycle. Decide which constraint you actually live with day to day.",
+          "The second gap is how a scene starts and how it changes. InstaDoodle's text-to-doodle and image-to-sketch aim to remove the blank-canvas problem, and scene-based editing lets you change one step without rebuilding the video — a cost that compounds if you revise often. If your process is already fast in an asset-and-canvas workflow and AI generation is not a priority, that gap may not move your decision.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Match it to your workflow",
+        intro: "Start from the work you actually do, not the feature list.",
+        items: [
+          { title: "Weekly marketing explainers", body: "High output and frequent edits favor a browser, AI-assisted workflow that starts scenes fast and revises without re-rendering.", href: "/use-cases" },
+          { title: "Course & lesson production", body: "If lessons change as curriculum changes, scene-based editing keeps revisions cheap, and multilingual voiceover widens reach.", href: "/educational-video-maker" },
+          { title: "Team training & onboarding", body: "Cross-device access and single-scene updates help distributed teams keep process videos current.", href: "/training-video-software" },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Where each tool has the edge",
+        items: [
+          { title: "InstaDoodle's clear advantages", body: "No-install browser access, AI-assisted scene starts, image-to-sketch to bring real assets on-style, and single-scene revisions exported to 16:9, 9:16, 4:5 or square. The trade-off: it needs connectivity and a human editing pass on AI output." },
+          { title: "Where Doodly may be the better choice", body: "If you already own and know Doodly, prefer a local or offline workflow, and AI generation is not a priority, its established toolset can be the more comfortable pick. Confirm its current platform support, library scope and any AI features before deciding." },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Switching from Doodly",
+        body: [
+          "Your scripts and storyboards move with you; projects usually do not. Before switching, rebuild one representative video in InstaDoodle rather than your whole back catalogue, so you can judge time-to-first-scene and revision effort on real work.",
+          "Keep planning documents tool-agnostic — a script, a scene list and one takeaway per scene — so the move is about the editor, not rewriting the message. Confirm commercial-use terms and any trial or money-back window on the official offer page before you commit.",
+        ],
+      },
+      {
+        type: "checklist",
+        heading: "Common mistakes when choosing whiteboard software",
+        items: [
+          "Choosing on library size alone, before checking search and the editing model.",
+          "Ignoring revision cost — most videos change after the first cut.",
+          "Assuming desktop means offline-forever, or that a browser tool has no privacy controls — verify both.",
+          "Buying before rebuilding one real video end to end.",
+          "Overlooking commercial-license terms on the exact plan you would buy.",
         ],
       },
       {
@@ -1027,10 +1064,47 @@ const pages: SitePage[] = [
       },
       {
         type: "prose",
-        heading: "Limitations to weigh",
+        heading: "How the differences play out in practice",
         body: [
-          "InstaDoodle needs connectivity and a review pass on AI output. Its doodle focus is a strength for explanation but not a fit for photorealistic demos.",
-          "For VideoScribe, verify how current the toolset is against your needs, and whether AI-assisted creation is part of the plan you would choose.",
+          "This matchup often comes down to where you want your time to go. InstaDoodle bets on AI: text-to-doodle and image-to-sketch aim to get you a usable scene fast, then you edit. VideoScribe's historical strength has been a large, mature image library and a proven canvas workflow (verify its current AI options). If a big searchable catalogue is what unblocks you, that can matter more than a generation feature; if starting from a prompt saves you the most time, weight the AI workflow.",
+          "Access and output shape the day-to-day too. InstaDoodle runs in the browser and exports 16:9, 9:16, 4:5 and square from one project, with single-scene edits. Confirm VideoScribe's current platform, export formats and how it handles a later revision against the way you actually publish.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Match it to your workflow",
+        intro: "Start from the work you actually do, not the feature list.",
+        items: [
+          { title: "AI-first drafting", body: "If your bottleneck is the blank canvas, generating scene starters from a prompt or image is where the time is saved.", href: "/ai-whiteboard-animation" },
+          { title: "Education & lessons", body: "Concept-at-a-time pacing and easy per-scene edits suit lessons that get revised as they are taught.", href: "/educational-video-maker" },
+          { title: "Multi-format publishing", body: "Reformatting one idea to landscape, vertical and square from a single project serves more channels without a rebuild.", href: "/whiteboard-video-maker" },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Where each tool has the edge",
+        items: [
+          { title: "InstaDoodle's clear advantages", body: "AI scene starts, image-to-sketch, no-install browser access and multi-format export with single-scene revisions. The trade-off: connectivity is required and AI output needs a review pass, and a doodle style suits explanation over photorealistic demos." },
+          { title: "Where VideoScribe may be the better choice", body: "A large, established asset library and a long track record can be decisive if your work depends on catalogue breadth — provided you have verified its current platform and whether it offers the AI-assisted creation you want." },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "Switching from VideoScribe",
+        body: [
+          "Scripts and storyboards are portable even when projects are not, so rebuild one representative scribe in InstaDoodle before moving anything else. Compare setup time and how much effort a later change takes on that single, real example.",
+          "Keep planning documents tool-agnostic, and confirm export formats, resolutions and commercial-use terms on the official offer page before you commit.",
+        ],
+      },
+      {
+        type: "checklist",
+        heading: "Common mistakes when choosing whiteboard software",
+        items: [
+          "Buying for library size without checking whether AI generation actually saves you time.",
+          "Assuming an established tool already has the newest AI features — verify it.",
+          "Underestimating how painful a later revision is in a timeline-based editor.",
+          "Skipping a real trial on one representative video.",
+          "Not confirming commercial rights on the exact plan you would buy.",
         ],
       },
       {
@@ -1110,10 +1184,47 @@ const pages: SitePage[] = [
       },
       {
         type: "prose",
-        heading: "Limitations to weigh",
+        heading: "How the differences play out in practice",
         body: [
-          "A focused tool can feel limiting if your needs later broaden beyond doodle; a broad suite can feel heavy if all you make is whiteboard explainers.",
-          "Match the tool to the majority of your work, not the occasional exception, and re-evaluate if your output mix changes.",
+          "This is a specialization-versus-breadth decision, and the trap is choosing on capability count. A broad suite like Animaker can produce many formats, but breadth you never use adds decisions and learning overhead. A focused tool like InstaDoodle removes choices for one job — doodle explainers — and keeps the style consistent. Count the formats you actually ship, not the ones a tool could theoretically make.",
+          "If doodle and whiteboard explainers are the majority of your output, a focused, AI-assisted workflow usually gets you there faster and more consistently. If your work genuinely spans 2D character animation, infographics and live-action edits, consolidating in one broad suite may reduce tool-switching — verify Animaker's current doodle depth so the specialized job does not suffer.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Match it to your workflow",
+        intro: "Start from your real output mix, not the feature list.",
+        items: [
+          { title: "Mostly doodle explainers", body: "If most of what you ship is doodle or whiteboard, a focused workflow with fewer decisions gets a consistent result faster.", href: "/doodle-video-creator" },
+          { title: "Education & training at volume", body: "Repeatable lesson and process formats benefit from templates, voiceover and cheap per-scene revisions.", href: "/educational-video-maker" },
+          { title: "One idea across channels", body: "Reformatting a single build to landscape, vertical and square keeps a doodle series consistent across platforms.", href: "/whiteboard-video-maker" },
+        ],
+      },
+      {
+        type: "cards",
+        heading: "Where each tool has the edge",
+        items: [
+          { title: "InstaDoodle's clear advantages", body: "A focused doodle workflow with fewer decisions, a consistent style across videos, and AI-assisted scene starts. The trade-off: it is deliberately narrow, so it is not the tool for 2D character animation, infographics or live-action work." },
+          { title: "Where Animaker may be the better choice", body: "If you regularly produce many animation styles and doodle is only part of your output, a broad suite can consolidate tools and reduce context-switching — after you verify its doodle and whiteboard depth against a specialist." },
+        ],
+      },
+      {
+        type: "prose",
+        heading: "If you are consolidating tools",
+        body: [
+          "Audit your last ten videos by format before deciding. If seven or more are doodle or whiteboard explainers, specialization usually wins on speed and consistency; if they are genuinely spread across formats, breadth may earn its place.",
+          "Either way, build the same short project in each and keep planning documents tool-agnostic, so the choice is about the editor and your real output — not a one-off exception. Confirm commercial-use terms on the plan you would buy.",
+        ],
+      },
+      {
+        type: "checklist",
+        heading: "Common mistakes when choosing whiteboard software",
+        items: [
+          "Choosing on total feature count instead of the formats you actually ship.",
+          "Paying for breadth you will not use.",
+          "Assuming a broad suite matches a specialist's depth for doodle — verify it.",
+          "Not auditing your real output mix before deciding.",
+          "Skipping a real build in each tool before committing.",
         ],
       },
       {
