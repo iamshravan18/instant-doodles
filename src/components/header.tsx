@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { TrackedLink } from "./tracked-link";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { getImage } from "@/lib/media";
 
 const NAV = [
   ["Features", "/features"],
@@ -25,6 +26,7 @@ export function Header() {
   const pathname = usePathname() || "/";
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
+  const logo = getImage("logo");
 
   // Lock scroll + Escape-to-close while the mobile menu is open.
   useEffect(() => {
@@ -42,7 +44,7 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-black/10 bg-[color-mix(in_srgb,var(--paper)_88%,transparent)] backdrop-blur">
       <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Independent InstaDoodle Guide — home">
-          <Image src="/images/instadoodle/instadoodle-logo.webp" alt="InstaDoodle logo" width={146} height={32} className="h-7 w-auto" priority />
+          <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} className="h-7 w-auto" priority />
           <span className="rounded-full border border-black/15 bg-card px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-[0.1em] text-muted">
             Independent&nbsp;guide
           </span>

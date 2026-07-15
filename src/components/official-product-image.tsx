@@ -1,13 +1,7 @@
 import Image from "next/image";
-import { OFFICIAL_ASSET_SOURCES, type OfficialProductImageKey } from "@/lib/assets";
+import { getRemoteImage, type OfficialProductImageKey } from "@/lib/media";
 
-export type { OfficialProductImageKey } from "@/lib/assets";
-
-const IMAGES: Record<OfficialProductImageKey, { src: string; aspectRatio: string }> = {
-  join: { src: OFFICIAL_ASSET_SOURCES.join, aspectRatio: "4 / 3" },
-  box: { src: OFFICIAL_ASSET_SOURCES.box, aspectRatio: "4 / 3" },
-  option: { src: OFFICIAL_ASSET_SOURCES.option, aspectRatio: "4 / 3" },
-};
+export type { OfficialProductImageKey } from "@/lib/media";
 
 interface OfficialProductImageProps {
   image: OfficialProductImageKey;
@@ -19,6 +13,7 @@ interface OfficialProductImageProps {
 /**
  * Reserves space before an owner-supplied official visual loads. The remote
  * source is restricted in next.config.ts and is optimized by next/image.
+ * Image metadata is sourced from the media registry (`@/lib/media`).
  */
 export function OfficialProductImage({
   image,
@@ -26,7 +21,7 @@ export function OfficialProductImage({
   className = "",
   sizes = "(min-width: 1024px) 42vw, 100vw",
 }: OfficialProductImageProps) {
-  const asset = IMAGES[image];
+  const asset = getRemoteImage(image);
 
   return (
     <div

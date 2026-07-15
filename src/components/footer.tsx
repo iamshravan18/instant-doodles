@@ -3,6 +3,7 @@ import Image from "next/image";
 import { AffiliateDisclosure } from "./affiliate-disclosure";
 import { TrackedLink } from "./tracked-link";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { getImage } from "@/lib/media";
 
 const groups = [
   {
@@ -44,6 +45,7 @@ const groups = [
 ] as const;
 
 export function Footer() {
+  const logo = getImage("logo");
   return (
     <footer className="border-t border-black/10 bg-card">
       <div className="mx-auto w-full max-w-6xl px-5 pt-10 lg:px-8">
@@ -52,7 +54,7 @@ export function Footer() {
       <div className="mx-auto grid w-full max-w-6xl gap-9 px-5 py-12 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
         <div className="lg:col-span-1">
           <div className="flex items-center gap-2">
-            <Image src="/images/instadoodle/instadoodle-logo.webp" alt="InstaDoodle logo" width={146} height={32} className="h-6 w-auto" />
+            <Image src={logo.src} alt={logo.alt} width={logo.width} height={logo.height} className="h-6 w-auto" />
           </div>
           <p className="mt-2 text-sm font-black tracking-[-0.03em]">
             Independent <span className="text-magenta">InstaDoodle</span> Guide

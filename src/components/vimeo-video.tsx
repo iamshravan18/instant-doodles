@@ -1,4 +1,4 @@
-import { VIMEO_VIDEOS, type VimeoVideoKey } from "@/lib/videos";
+import { getVideo, type VimeoVideoKey } from "@/lib/media";
 
 interface VimeoVideoProps {
   video: VimeoVideoKey;
@@ -9,15 +9,16 @@ interface VimeoVideoProps {
 /**
  * A server-rendered Vimeo embed with a reserved 16:9 frame. Vimeo is only
  * requested near the viewport; no embed receives autoplay parameters.
+ * All video metadata is sourced from the media registry (`@/lib/media`).
  */
 export function VimeoVideo({ video, caption, className = "" }: VimeoVideoProps) {
-  const item = VIMEO_VIDEOS[video];
+  const item = getVideo(video);
 
   return (
     <figure className={`overflow-hidden rounded-2xl border-2 border-ink bg-ink shadow-[var(--shadow-hard-lavender)] ${className}`}>
       <div className="relative aspect-video bg-ink">
         <iframe
-          src={item.src}
+          src={item.embedUrl}
           title={item.title}
           loading="lazy"
           className="absolute inset-0 h-full w-full border-0"

@@ -1,6 +1,4 @@
-import type { OfficialProductImageKey } from "./assets";
-import type { MediaKey } from "./media";
-import type { VimeoVideoKey } from "./videos";
+import type { MediaKey, OfficialProductImageKey, VimeoVideoKey } from "./media";
 
 export type CalloutKind = "verified" | "editorial" | "verify";
 

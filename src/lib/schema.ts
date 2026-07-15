@@ -1,4 +1,5 @@
 import type { Block } from "./content";
+import { videoObject, type VimeoVideoKey } from "./media";
 import {
   absoluteUrl,
   OFFICIAL_PRODUCT_URL,
@@ -147,7 +148,10 @@ export function pageStructuredData(page: SitePage): SchemaNode {
   };
 }
 
-export function homeStructuredData(faqItems: readonly FaqItem[]): SchemaNode {
+export function homeStructuredData(
+  faqItems: readonly FaqItem[],
+  videoKeys: readonly VimeoVideoKey[] = [],
+): SchemaNode {
   const homeUrl = absoluteUrl();
   const faq = faqPageSchema(faqItems);
 
@@ -195,6 +199,7 @@ export function homeStructuredData(faqItems: readonly FaqItem[]): SchemaNode {
           },
         ],
       },
+      ...videoKeys.map((key) => videoObject(key)),
       ...(faq ? [faq] : []),
     ],
   };

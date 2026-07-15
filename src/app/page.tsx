@@ -8,10 +8,9 @@ import { TrackedLink } from "@/components/tracked-link";
 import { VimeoVideo } from "@/components/vimeo-video";
 import { Callout, Card, Eyebrow, Pill, SceneFrame, Section, SectionHeading, SketchUnderline } from "@/components/ui";
 import { ANALYTICS_EVENTS } from "@/lib/analytics";
+import { getImage } from "@/lib/media";
 import { homeStructuredData } from "@/lib/schema";
 import { OFFICIAL_PRODUCT_URL } from "@/lib/site";
-
-const IMG = "/images/instadoodle";
 
 const workflow = [
   ["Type your idea", "Describe a scene, script or topic in your language. DoodleAI generates the characters, elements and backgrounds to start from.", "Text-to-doodle"],
@@ -59,7 +58,15 @@ const faqs = [
 ] as const;
 
 export default function Home() {
-  const schema = homeStructuredData(faqs);
+  const schema = homeStructuredData(faqs, ["demo", "sale"]);
+  const heroEditor = getImage("heroEditor");
+  const sampleBrand = getImage("sampleBrand");
+  const sceneEditor = getImage("sceneEditor");
+  const imageToSketch = getImage("imageToSketch");
+  const voiceover = getImage("voiceover");
+  const transitions = getImage("transitions");
+  const whyWhiteboard = getImage("whyWhiteboard");
+  const sampleKids = getImage("sampleKids");
 
   return (
     <>
@@ -128,20 +135,20 @@ export default function Home() {
                 built around scenes
               </span>
               <SceneFrame
-                src={`${IMG}/ai-doodle-generator-editor.webp`}
-                alt="InstaDoodle editor showing doodle scenes, a drawing hand and a scene timeline"
-                width={1473}
-                height={631}
+                src={heroEditor.src}
+                alt={heroEditor.alt}
+                width={heroEditor.width}
+                height={heroEditor.height}
                 priority
                 label="instadoodle · scene editor"
                 sizes="(min-width: 1024px) 52vw, 100vw"
               />
               <figure className="absolute -bottom-8 -left-5 z-10 hidden w-52 -rotate-3 overflow-hidden rounded-2xl border-2 border-ink bg-card shadow-[var(--shadow-hard)] lg:block xl:w-56">
                 <Image
-                  src={`${IMG}/samples/instadoodle-sample-brand-story.webp`}
+                  src={sampleBrand.src}
                   alt="A finished doodle explainer scene created in InstaDoodle"
-                  width={800}
-                  height={450}
+                  width={sampleBrand.width}
+                  height={sampleBrand.height}
                   sizes="224px"
                   className="h-auto w-full"
                 />
@@ -179,10 +186,10 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1} y={22}>
             <SceneFrame
-              src={`${IMG}/features/instadoodle-scene-editor-interface.webp`}
-              alt="InstaDoodle scene editor interface with a doodle canvas and editing controls"
-              width={1000}
-              height={833}
+              src={sceneEditor.src}
+              alt={sceneEditor.alt}
+              width={sceneEditor.width}
+              height={sceneEditor.height}
               label="scene editor"
             />
           </Reveal>
@@ -292,10 +299,10 @@ export default function Home() {
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal y={22}>
             <SceneFrame
-              src={`${IMG}/features/instadoodle-ai-image-to-sketch-panel.webp`}
-              alt="InstaDoodle AI image-to-sketch panel turning an uploaded photo into a hand-drawn doodle"
-              width={1000}
-              height={561}
+              src={imageToSketch.src}
+              alt={imageToSketch.alt}
+              width={imageToSketch.width}
+              height={imageToSketch.height}
               label="image → sketch"
             />
           </Reveal>
@@ -330,7 +337,7 @@ export default function Home() {
         <div className="mt-9 grid gap-5 lg:grid-cols-2">
           <Reveal>
             <div className="overflow-hidden rounded-2xl border-2 border-ink bg-card">
-              <Image src={`${IMG}/features/instadoodle-voiceover-and-music.webp`} alt="InstaDoodle voiceover and background music panel" width={1000} height={833} sizes="(min-width:1024px) 45vw, 100vw" className="h-auto w-full" />
+              <Image src={voiceover.src} alt={voiceover.alt} width={voiceover.width} height={voiceover.height} sizes="(min-width:1024px) 45vw, 100vw" className="h-auto w-full" />
               <div className="border-t-2 border-ink p-5">
                 <h3 className="text-lg font-black">Voiceover &amp; background music</h3>
                 <p className="mt-2 text-sm text-muted">Generate a voiceover, upload your own narration, or add royalty-free music. The official site lists 20+ voices and languages.</p>
@@ -339,7 +346,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08}>
             <div className="overflow-hidden rounded-2xl border-2 border-ink bg-card">
-              <Image src={`${IMG}/features/instadoodle-slide-transitions.webp`} alt="InstaDoodle slide transition options between doodle scenes" width={1000} height={833} sizes="(min-width:1024px) 45vw, 100vw" className="h-auto w-full" />
+              <Image src={transitions.src} alt={transitions.alt} width={transitions.width} height={transitions.height} sizes="(min-width:1024px) 45vw, 100vw" className="h-auto w-full" />
               <div className="border-t-2 border-ink p-5">
                 <h3 className="text-lg font-black">Animation &amp; transitions</h3>
                 <p className="mt-2 text-sm text-muted">Reveal scenes with draw, wipe, slide, fade or pop-in, then move between them with fade, wipe, iris or push transitions.</p>
@@ -393,7 +400,7 @@ export default function Home() {
             </Stagger>
           </Reveal>
           <Reveal delay={0.1} y={22}>
-            <Image src={`${IMG}/why-whiteboard-animation.webp`} alt="Whiteboard video illustrations for marketing, learning and business communication" width={669} height={392} sizes="(min-width:1024px) 45vw, 100vw" className="h-auto w-full" />
+            <Image src={whyWhiteboard.src} alt={whyWhiteboard.alt} width={whyWhiteboard.width} height={whyWhiteboard.height} sizes="(min-width:1024px) 45vw, 100vw" className="h-auto w-full" />
           </Reveal>
         </div>
       </Section>
@@ -411,12 +418,12 @@ export default function Home() {
         </Reveal>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {[
-            [`${IMG}/samples/instadoodle-sample-brand-story.webp`, "Brand story doodle scene", "Brand stories & explainers", "A drawn narrative that introduces a product or idea and lands on one action."],
-            [`${IMG}/samples/instadoodle-sample-kids-lesson.webp`, "Kids lesson doodle scene", "Education & tutorials", "Math tutorials, how-to guides and step-by-step lessons paced one concept at a time."],
+            [sampleBrand.src, "Brand story doodle scene", "Brand stories & explainers", "A drawn narrative that introduces a product or idea and lands on one action."],
+            [sampleKids.src, "Kids lesson doodle scene", "Education & tutorials", "Math tutorials, how-to guides and step-by-step lessons paced one concept at a time."],
           ].map(([src, alt, title, body]) => (
             <Reveal key={title}>
               <figure className="overflow-hidden rounded-2xl border-2 border-ink bg-card">
-                <Image src={src} alt={alt} width={800} height={450} sizes="(min-width:768px) 45vw, 100vw" className="h-auto w-full" />
+                <Image src={src} alt={alt} width={sampleBrand.width} height={sampleBrand.height} sizes="(min-width:768px) 45vw, 100vw" className="h-auto w-full" />
                 <figcaption className="border-t-2 border-ink p-5">
                   <h3 className="font-black">{title}</h3>
                   <p className="mt-1 text-sm text-muted">{body}</p>
