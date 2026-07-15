@@ -328,6 +328,16 @@ const pages: SitePage[] = [
         ],
       },
       {
+        type: "faq",
+        heading: "Comparison questions.",
+        items: [
+          ["Why don't you publish competitor pricing?", "Prices, plans and limits change often, and restating them risks misleading you with stale figures. We describe the workflow differences and point you to each provider's official offer page for anything time-sensitive."],
+          ["How do you decide which tool 'wins'?", "We do not crown a universal winner. We weigh workflow fit — where the tool runs, how a scene starts, revision cost, output formats and commercial terms — against the kind of videos you make, and say plainly when a competitor is the better choice."],
+          ["What should I verify before buying any whiteboard tool?", "Current price and billing, AI credit or usage limits, export resolutions and aspect ratios, commercial-use rights on your plan, platform support, and whether a trial or money-back window exists. Confirm these on the official offer page."],
+          ["Is this an official or independent guide, and do you earn commissions?", "It is an independent guide, not the vendor. It may use affiliate links, disclosed on the site, and earns nothing from which tool you choose — the assessment stays workflow-first and publishes no invented prices, ratings or testimonials."],
+        ],
+      },
+      {
         type: "callout",
         kind: "verify",
         body: "We do not publish competitor pricing or unverified competitor features. " + VERIFY_NOTE,
@@ -1002,6 +1012,10 @@ const pages: SitePage[] = [
         items: [
           ["Is InstaDoodle a direct Doodly alternative?", "It targets the same doodle-video job with a browser-based, AI-assisted approach. Whether it is the right alternative depends on your platform and AI preferences."],
           ["Can I try before buying?", "InstaDoodle's site describes a money-back guarantee rather than a free trial. Verify current trial and refund terms on the official offer page."],
+          ["Can I import my Doodly projects into InstaDoodle?", "Plan to rebuild, not import. No whiteboard tool reliably opens another's project files, and this guide will not claim otherwise — but your script, storyboard and message carry over, so recreating one representative video is usually quick. Trial that before moving anything else."],
+          ["Does InstaDoodle's AI replace the hand-built drawing Doodly is known for?", "No. The AI generates starting points — a doodle from a prompt, or a sketch from an uploaded image — and you still choose, arrange, time and narrate the scenes. Treat AI output as raw material that needs a human review pass."],
+          ["If I switch, do my commercial rights carry over?", "No — licences do not transfer between products, and commercial terms are plan-dependent for both. Confirm InstaDoodle's commercial-use terms on the exact plan you would buy, on the official offer page, before relying on it for client work."],
+          ["Is a browser-based tool a safe long-term bet compared with desktop software?", "Each carries a different risk. A cloud tool updates continuously and follows you across devices but needs a connection and the vendor staying online; desktop software runs offline but can stall on newer operating systems. Keeping your scripts and storyboards portable protects you either way."],
         ],
       },
     ],
@@ -1132,6 +1146,10 @@ const pages: SitePage[] = [
         items: [
           ["Which is easier to start with?", "InstaDoodle's templates and AI generation aim to reduce the blank-project problem; VideoScribe relies on its library and canvas. Trial both with one script."],
           ["Do they support voiceover?", "InstaDoodle supports generated or uploaded voiceover and music. Verify VideoScribe's current audio options."],
+          ["Can InstaDoodle's AI generate any image I describe?", "The official site says you can type a prompt and the engine will generate a doodle for it, and that the engine is improved over time. Results still need selection and editing, so treat generation as a fast first draft rather than a finished asset."],
+          ["Is a big asset library still worth it if a tool has AI generation?", "Often yes. A searchable library gives consistent, predictable elements, while AI is faster for bespoke or on-brand visuals. Decide which unblocks your work more — and if you rely on catalogue breadth, verify VideoScribe's current library scope and licensing."],
+          ["Are the AI generations limited or metered?", "AI usage can be plan-dependent, so do not assume it is unlimited. Check any credit or usage limits on InstaDoodle's official offer page, and confirm what VideoScribe includes, before you compare the two on cost."],
+          ["Is InstaDoodle suitable long term if my needs stay whiteboard-focused?", "If whiteboard and doodle explainers remain your main output, a focused, browser-based workflow tends to stay efficient. Keep scripts and storyboards portable so you are never locked in, and re-evaluate only if your output genuinely broadens."],
         ],
       },
     ],
@@ -1262,6 +1280,10 @@ const pages: SitePage[] = [
         items: [
           ["Is a focused tool better than a broad one?", "Not universally. A focused tool reduces decisions for one job; a broad suite covers more jobs. The right answer depends on your output mix."],
           ["Can I switch later?", "Yes — scripts and storyboards are portable even if projects are not. Keep planning documents tool-agnostic."],
+          ["Will I outgrow a focused tool like InstaDoodle?", "Only if your output mix broadens. If you consistently ship doodle and whiteboard explainers, a focused tool stays efficient; if you start needing 2D character animation, infographics or live-action edits, a broad suite earns its place. Re-evaluate when your mix actually changes, not before."],
+          ["Is it worth paying for a broad suite if I only make doodle videos?", "Usually not. Breadth you do not use adds cost, decisions and learning overhead. Match the tool to the majority of your work — and if doodle is the majority, a specialized workflow is typically faster and more consistent."],
+          ["Can InstaDoodle do the other formats Animaker offers?", "No — it is deliberately focused on doodle and whiteboard animation, not a broad multi-format suite. If you need many animation styles in one place, that is a reason to consider Animaker; if you do not, that focus is the advantage."],
+          ["Does a broad suite handle doodle as well as a specialist?", "Not necessarily — breadth and depth are different things. A suite may include a whiteboard mode without matching a specialist's asset library, AI generation or scene-revision flow. Verify Animaker's doodle depth against your real needs rather than assuming parity."],
         ],
       },
     ],
