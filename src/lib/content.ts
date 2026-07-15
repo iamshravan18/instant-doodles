@@ -15,4 +15,5 @@ export type Block =
   | { type: "faq"; heading?: string; items: [string, string][] }
   | { type: "gallery"; heading?: string; intro?: string; items: { media: MediaKey; title: string; body: string }[]; anchor?: string }
   | { type: "vimeo"; heading: string; intro?: string; video: VimeoVideoKey; ctaHref?: string; ctaLabel?: string; anchor?: string }
-  | { type: "officialImage"; heading: string; body: string[]; image: OfficialProductImageKey; alt: string; reverse?: boolean; anchor?: string };
+  | { type: "officialImage"; heading: string; body: string[]; image: OfficialProductImageKey; alt: string; reverse?: boolean; anchor?: string }
+  | { type: "decision"; heading?: string; anchor?: string; verdict: string; altName: string; instadoodle: string[]; instadoodleBestFor: string; alternative: string[]; alternativeBestFor: string; bottomLine?: string };

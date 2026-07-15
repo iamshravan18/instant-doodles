@@ -275,6 +275,50 @@ export function PageBlocks({ blocks }: { blocks: Block[] }) {
               </Section>
             );
 
+          case "decision":
+            return (
+              <Section key={key} id={block.anchor} tone="lavender" bordered>
+                <Reveal>
+                  <Eyebrow tone="violet">Quick decision</Eyebrow>
+                  <SectionHeading underline className="mt-3 max-w-3xl">{block.heading ?? "Which one should you choose?"}</SectionHeading>
+                  <p className="answer-summary mt-5 max-w-3xl text-[length:var(--step-1)] leading-8 text-muted">{block.verdict}</p>
+                </Reveal>
+                <div className="mt-8 grid gap-5 lg:grid-cols-2">
+                  <Reveal>
+                    <div className="flex h-full flex-col rounded-2xl border-2 border-ink bg-card p-6">
+                      <h3 className="text-lg font-black tracking-[-0.02em]">Choose InstaDoodle if</h3>
+                      <ul className="mt-4 space-y-3">
+                        {block.instadoodle.map((point) => (
+                          <li key={point} className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-violet">✓</span><span>{point}</span></li>
+                        ))}
+                      </ul>
+                      <p className="mt-auto border-t border-black/10 pt-4 text-sm">
+                        <span className="font-extrabold text-violet">Best for:</span> <span className="text-muted">{block.instadoodleBestFor}</span>
+                      </p>
+                    </div>
+                  </Reveal>
+                  <Reveal delay={0.08}>
+                    <div className="flex h-full flex-col rounded-2xl border-2 border-ink bg-card p-6">
+                      <h3 className="text-lg font-black tracking-[-0.02em]">Choose {block.altName} if</h3>
+                      <ul className="mt-4 space-y-3">
+                        {block.alternative.map((point) => (
+                          <li key={point} className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-magenta">•</span><span>{point}</span></li>
+                        ))}
+                      </ul>
+                      <p className="mt-auto border-t border-black/10 pt-4 text-sm">
+                        <span className="font-extrabold text-magenta">Best for:</span> <span className="text-muted">{block.alternativeBestFor}</span>
+                      </p>
+                    </div>
+                  </Reveal>
+                </div>
+                {block.bottomLine && (
+                  <Reveal delay={0.12}>
+                    <div className="mt-6 max-w-3xl"><Callout kind="editorial">{block.bottomLine}</Callout></div>
+                  </Reveal>
+                )}
+              </Section>
+            );
+
           default:
             return null;
         }

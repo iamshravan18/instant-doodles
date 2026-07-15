@@ -897,22 +897,35 @@ const pages: SitePage[] = [
     intro:
       "Both tools make doodle-style videos. The decision usually comes down to where you want to work, how much you value AI-assisted creation, and the kind of videos you make most.",
     heroCtas: [
-      { href: "#summary", label: "See the decision summary" },
+      { href: "#quick-decision", label: "See the quick decision" },
       { href: "/features", label: "Explore the AI features" },
     ],
     blocks: [
       {
+        type: "decision",
+        anchor: "quick-decision",
+        verdict:
+          "Choose InstaDoodle for a browser-based, AI-assisted doodle workflow. Consider Doodly if you specifically prefer its long-standing desktop toolset — after verifying its current platform options.",
+        altName: "Doodly",
+        instadoodle: [
+          "You want to work in the browser with no install, across devices.",
+          "AI-assisted scene creation and image-to-sketch would speed up your first draft.",
+          "You revise often and want to edit one scene without rebuilding the video.",
+        ],
+        instadoodleBestFor: "Fast, AI-assisted doodle explainers for marketing, education and training.",
+        alternative: [
+          "You specifically prefer Doodly's established doodle toolset and character libraries.",
+          "You are comfortable with its platform requirements (historically desktop — verify current options).",
+          "AI-assisted generation is not a priority for how you work.",
+        ],
+        alternativeBestFor: "A familiar, self-contained doodle toolset for creators already invested in it.",
+        bottomLine:
+          "Still unsure? Build the same short explainer in both and compare time-to-first-scene, narration, and how hard it is to revise a single step.",
+      },
+      {
         type: "callout",
         kind: "verify",
         body: "Doodly's current features, distribution and pricing should be confirmed on its official site. We do not publish competitor pricing or unverified specifics.",
-      },
-      {
-        type: "prose",
-        heading: "The short version",
-        body: [
-          "Choose InstaDoodle if a browser-based workflow and AI-assisted doodle generation matter to you: it runs in the browser (per its official site), generates scenes from text prompts, and redraws images as sketches.",
-          "Consider Doodly if you specifically prefer its long-standing doodle toolset and workflow. Doodly has historically been distributed as installable desktop software, so verify its current platform support and any web option before deciding.",
-        ],
       },
       {
         type: "compare",
@@ -927,15 +940,6 @@ const pages: SitePage[] = [
           { dimension: "Editing model", instadoodle: "Scene-based; edit one scene without rebuilding.", alternative: "Timeline/scene editing — confirm the current approach." },
           { dimension: "Output", instadoodle: "16:9, 9:16, 4:5, square from one project.", alternative: "Verify supported resolutions and aspect ratios." },
           { dimension: "Commercial use", instadoodle: "Plan-dependent — verify on the offer page.", alternative: "Verify commercial licensing on the plan you would buy." },
-        ],
-      },
-      {
-        type: "cards",
-        heading: "Best for…",
-        items: [
-          { title: "Choose InstaDoodle if", body: "You want browser-based access, AI-assisted scene creation, and image-to-sketch to bring real assets on-style." },
-          { title: "Consider Doodly if", body: "You prefer its specific doodle toolset and are comfortable with its platform requirements after verifying them." },
-          { title: "Either way", body: "Build the same short explainer in each and compare time-to-scene, narration and revising a step." },
         ],
       },
       {
@@ -976,22 +980,35 @@ const pages: SitePage[] = [
     intro:
       "InstaDoodle and VideoScribe are both relevant to whiteboard animation. Focus your evaluation on the workflow you need rather than a claim of universal superiority.",
     heroCtas: [
-      { href: "#summary", label: "See the decision summary" },
+      { href: "#quick-decision", label: "See the quick decision" },
       { href: "/whiteboard-animation-software", label: "See the product workflow" },
     ],
     blocks: [
       {
+        type: "decision",
+        anchor: "quick-decision",
+        verdict:
+          "Choose InstaDoodle for AI-assisted, no-install doodle creation. Consider VideoScribe for its mature asset library and long track record — after verifying its current AI and platform options.",
+        altName: "VideoScribe",
+        instadoodle: [
+          "You want AI to generate scene starters and prefer a browser-based workflow.",
+          "Doodle-style explanation is your main output.",
+          "You reformat one idea across 16:9, 9:16, 4:5 and square.",
+        ],
+        instadoodleBestFor: "AI-first doodle explainers and lessons made in the browser.",
+        alternative: [
+          "You value a large, established image library and a proven workflow.",
+          "You have verified its current platform and whether it offers the AI features you want.",
+          "A long track record matters more to you than AI-assisted creation.",
+        ],
+        alternativeBestFor: "Traditional whiteboard animation backed by a deep, mature asset catalog.",
+        bottomLine:
+          "Test the same lesson or explainer in both and compare setup time and how much effort a later revision takes.",
+      },
+      {
         type: "callout",
         kind: "verify",
         body: "VideoScribe's current platforms, library and pricing should be confirmed on its official site. We do not publish competitor pricing or unverified specifics.",
-      },
-      {
-        type: "prose",
-        heading: "The short version",
-        body: [
-          "InstaDoodle leans on AI: text-to-doodle generation and image-to-sketch aim to get you from an idea to a scene quickly, entirely in the browser.",
-          "VideoScribe is an established whiteboard animation product with a large asset library and a long track record. Confirm its current browser/desktop options and whether it offers the AI-assisted creation you want.",
-        ],
       },
       {
         type: "compare",
@@ -1006,15 +1023,6 @@ const pages: SitePage[] = [
           { dimension: "Style", instadoodle: "Doodle-focused, with caricature/cartoon/realistic/charcoal AI styles.", alternative: "Whiteboard-focused; verify current style range." },
           { dimension: "Output", instadoodle: "16:9, 9:16, 4:5, square from one project.", alternative: "Verify export formats and resolutions." },
           { dimension: "Commercial use", instadoodle: "Plan-dependent — verify on the offer page.", alternative: "Verify commercial licensing per plan." },
-        ],
-      },
-      {
-        type: "cards",
-        heading: "Best for…",
-        items: [
-          { title: "Choose InstaDoodle if", body: "You want AI to generate scene starters and prefer a no-install, browser-based workflow." },
-          { title: "Consider VideoScribe if", body: "You value its mature library and established workflow, after verifying current platform and AI support." },
-          { title: "Either way", body: "Test the same lesson or explainer in both and compare setup time and revision effort." },
         ],
       },
       {
@@ -1055,22 +1063,35 @@ const pages: SitePage[] = [
     intro:
       "This is a specialization-versus-breadth decision. InstaDoodle is built around doodle and whiteboard animation; Animaker is a broader animation platform. Start from the type of video you actually make.",
     heroCtas: [
-      { href: "#summary", label: "See the decision summary" },
+      { href: "#quick-decision", label: "See the quick decision" },
       { href: "/doodle-video-creator", label: "See the doodle workflow" },
     ],
     blocks: [
       {
+        type: "decision",
+        anchor: "quick-decision",
+        verdict:
+          "Choose InstaDoodle if your work is mostly doodle and whiteboard explainers. Choose Animaker if you need many animation formats in one suite and doodle is only part of your output.",
+        altName: "Animaker",
+        instadoodle: [
+          "Most of your videos are doodle or whiteboard explainers.",
+          "You want a focused, AI-assisted workflow with fewer decisions.",
+          "A consistent doodle style across videos matters to you.",
+        ],
+        instadoodleBestFor: "Deep, repeatable doodle explainer production.",
+        alternative: [
+          "You produce many visual formats — 2D character animation, infographics, live-action edits.",
+          "You want one suite to consolidate varied output (verify its doodle depth).",
+          "Breadth across formats matters more than doodle specialization.",
+        ],
+        alternativeBestFor: "Broad, multi-format animation needs in a single platform.",
+        bottomLine:
+          "Match the tool to the majority of your work, not the occasional exception — then build the same short project in each to compare the learning curve and the result you can ship.",
+      },
+      {
         type: "callout",
         kind: "verify",
         body: "Animaker's current feature set, formats and pricing should be confirmed on its official site. We do not publish competitor pricing or unverified specifics.",
-      },
-      {
-        type: "prose",
-        heading: "The short version",
-        body: [
-          "If nearly all your videos are doodle or whiteboard explainers, a focused tool like InstaDoodle removes decisions and keeps the style consistent, with AI to speed up scene creation.",
-          "If you produce many visual formats — 2D character animation, infographics, live-action edits — a broad suite like Animaker may consolidate more of that work. Verify its current whiteboard/doodle capabilities against your needs.",
-        ],
       },
       {
         type: "compare",
@@ -1085,15 +1106,6 @@ const pages: SitePage[] = [
           { dimension: "Learning curve", instadoodle: "Narrower toolset, fewer decisions for doodle videos.", alternative: "More capable but potentially more to learn." },
           { dimension: "Output", instadoodle: "16:9, 9:16, 4:5, square from one project.", alternative: "Verify formats and resolutions." },
           { dimension: "Commercial use", instadoodle: "Plan-dependent — verify on the offer page.", alternative: "Verify commercial licensing per plan." },
-        ],
-      },
-      {
-        type: "cards",
-        heading: "Best for…",
-        items: [
-          { title: "Choose InstaDoodle if", body: "Your work is mostly doodle explainers and you want a focused, AI-assisted workflow." },
-          { title: "Consider Animaker if", body: "You need many animation styles in one place and doodle is only part of your output." },
-          { title: "Either way", body: "Build the same short project in each and compare the learning curve and the result you can ship." },
         ],
       },
       {
