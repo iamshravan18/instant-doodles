@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta";
+import { AffiliateOfferCta } from "@/components/affiliate-link";
 import { FaqList } from "@/components/faq";
 import { JsonLd } from "@/components/json-ld";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion";
@@ -512,6 +513,29 @@ export default function Home() {
           </Reveal>
         </div>
       </Section>
+
+      {/* Post-evaluation conversion point · env-gated, renders only when an affiliate destination is set */}
+      {process.env.NEXT_PUBLIC_AFFILIATE_URL && (
+        <Section tone="lavender" bordered space="tight">
+          <Reveal>
+            <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[var(--r-xl)] border-2 border-ink bg-card p-8 text-center shadow-[var(--shadow-hard-lavender)]">
+              <h2 className="text-[length:var(--step-2)] font-black tracking-[-0.02em]">Evaluated the workflow? See it for yourself.</h2>
+              <p className="max-w-xl text-muted">You have seen how a doodle video comes together and where it fits. If it matches the explanation you need to make, view the current product before you decide.</p>
+              <div className="mt-1 flex flex-wrap items-center justify-center gap-3">
+                <Link href="/whiteboard-animation-software" className="inline-flex min-h-12 items-center rounded-full border-2 border-ink px-6 py-3 font-extrabold transition hover:bg-lavender">
+                  Read the workflow guide <span aria-hidden className="ml-1">→</span>
+                </Link>
+                <AffiliateOfferCta
+                  tone="light"
+                  label="Check the latest InstaDoodle offer"
+                  placement="home_midpage_offer"
+                  className="inline-flex min-h-12 items-center rounded-full bg-ink px-6 py-3 font-extrabold text-white transition hover:bg-violet"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </Section>
+      )}
 
       {/* 18 · Comparison teaser */}
       <Section id="compare" tone="card" bordered>

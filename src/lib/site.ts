@@ -156,6 +156,15 @@ const pages: SitePage[] = [
           ["Which aspect ratios are supported?", "The official site lists 16:9, 9:16, 4:5 and square, exported from a single project."],
         ],
       },
+      {
+        type: "offer",
+        heading: "Seen the features? See them live.",
+        body: "The surest way to judge fit is to view the current product for yourself, then plan your first video.",
+        internalHref: "/examples",
+        internalLabel: "See real examples",
+        label: "See the official product",
+        placement: "features_offer",
+      },
     ],
     related: ["/ai-whiteboard-animation", "/doodle-video-creator", "/samples"],
     cta: {
@@ -1019,6 +1028,15 @@ const pages: SitePage[] = [
         ],
       },
       {
+        type: "offer",
+        heading: "Ready to see InstaDoodle for yourself?",
+        body: "You've seen where each tool fits. If a browser-based, AI-assisted doodle workflow matches your work, view the current product before you decide.",
+        internalHref: "/features",
+        internalLabel: "Explore the AI features",
+        label: "Check the latest InstaDoodle offer",
+        placement: "compare_doodly_offer",
+      },
+      {
         type: "prose",
         heading: "Switching from Doodly",
         body: [
@@ -1155,6 +1173,15 @@ const pages: SitePage[] = [
         ],
       },
       {
+        type: "offer",
+        heading: "Ready to see InstaDoodle for yourself?",
+        body: "You've weighed AI creation against a mature library. If the AI-first, browser-based workflow fits, view the current product before you decide.",
+        internalHref: "/features",
+        internalLabel: "Explore the AI features",
+        label: "Check the latest InstaDoodle offer",
+        placement: "compare_videoscribe_offer",
+      },
+      {
         type: "prose",
         heading: "Switching from VideoScribe",
         body: [
@@ -1289,6 +1316,15 @@ const pages: SitePage[] = [
           { title: "InstaDoodle's clear advantages", body: "A focused doodle workflow with fewer decisions, a consistent style across videos, and AI-assisted scene starts. The trade-off: it is deliberately narrow, so it is not the tool for 2D character animation, infographics or live-action work." },
           { title: "Where Animaker may be the better choice", body: "If you regularly produce many animation styles and doodle is only part of your output, a broad suite can consolidate tools and reduce context-switching — after you verify its doodle and whiteboard depth against a specialist." },
         ],
+      },
+      {
+        type: "offer",
+        heading: "Ready to see InstaDoodle for yourself?",
+        body: "You've weighed focus against breadth. If doodle explainers are your main output, view the current product before you decide.",
+        internalHref: "/doodle-video-creator",
+        internalLabel: "See the doodle workflow",
+        label: "Check the latest InstaDoodle offer",
+        placement: "compare_animaker_offer",
       },
       {
         type: "prose",
@@ -1453,6 +1489,15 @@ const pages: SitePage[] = [
           "Refund policy and guarantee duration",
           "Whether a trial exists",
         ],
+      },
+      {
+        type: "offer",
+        heading: "Checked the list? See the current offer.",
+        body: "This guide does not restate prices — they change. Confirm the current plan details and any guarantee on the official page.",
+        internalHref: "/features",
+        internalLabel: "Compare the features",
+        label: "Check the current InstaDoodle offer",
+        placement: "pricing_offer",
       },
       {
         type: "callout",

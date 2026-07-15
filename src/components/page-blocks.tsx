@@ -5,6 +5,7 @@ import { MEDIA } from "@/lib/media";
 import { ComparisonTable } from "./comparison-table";
 import { FaqList } from "./faq";
 import { OfficialProductImage } from "./official-product-image";
+import { AffiliateOfferCta } from "./affiliate-link";
 import { Reveal, Stagger, StaggerItem } from "./motion";
 import { VimeoVideo } from "./vimeo-video";
 import { Callout, Card, Eyebrow, Pill, SceneFrame, Section, SectionHeading } from "./ui";
@@ -318,6 +319,33 @@ export function PageBlocks({ blocks }: { blocks: Block[] }) {
                 )}
               </Section>
             );
+
+          case "offer": {
+            // Earned, env-gated conversion point. Renders only when an approved
+            // affiliate destination is configured; internal next-step always leads.
+            if (!process.env.NEXT_PUBLIC_AFFILIATE_URL) return null;
+            return (
+              <Section key={key} id={block.anchor} tone={tone} bordered={bordered} space="tight">
+                <Reveal>
+                  <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[var(--r-xl)] border-2 border-ink bg-card p-8 text-center shadow-[var(--shadow-hard-lavender)]">
+                    <h2 className="text-[length:var(--step-2)] font-black tracking-[-0.02em]">{block.heading}</h2>
+                    {block.body && <p className="max-w-xl text-muted">{block.body}</p>}
+                    <div className="mt-1 flex flex-wrap items-center justify-center gap-3">
+                      <Link href={block.internalHref} className="inline-flex min-h-12 items-center rounded-full border-2 border-ink px-6 py-3 font-extrabold transition hover:bg-lavender">
+                        {block.internalLabel} <span aria-hidden className="ml-1">→</span>
+                      </Link>
+                      <AffiliateOfferCta
+                        tone="light"
+                        label={block.label}
+                        placement={block.placement}
+                        className="inline-flex min-h-12 items-center rounded-full bg-ink px-6 py-3 font-extrabold text-white transition hover:bg-violet"
+                      />
+                    </div>
+                  </div>
+                </Reveal>
+              </Section>
+            );
+          }
 
           default:
             return null;
