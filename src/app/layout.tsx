@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  verification: { google: "FrxHDewJ-4pIFeLrmpWSf84DX1ZaqLs5HhBeS4l0ZgQ" },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
