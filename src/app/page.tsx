@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta";
-import { OfficialProductImage } from "@/components/official-product-image";
 import { FaqList } from "@/components/faq";
 import { JsonLd } from "@/components/json-ld";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion";
@@ -66,10 +65,10 @@ export default function Home() {
     <>
       <JsonLd data={schema} />
 
-      {/* 2–4 · Hero: what it is, who it's for, the workflow + independent notice + large product preview */}
+      {/* 2–4 · Hero: promise + proof (workspace → finished video) + independent-guide trust signals */}
       <section className="relative overflow-hidden border-b border-black/10">
         <div aria-hidden className="absolute inset-0 -z-10" style={{ background: "var(--grad-hero)" }} />
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16 lg:px-8 lg:py-24">
           <div>
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full border border-black/12 bg-card px-3 py-1 text-xs font-extrabold uppercase tracking-[0.14em] text-violet">
@@ -91,34 +90,41 @@ export default function Home() {
             <Reveal delay={0.15}>
               <div className="mt-8 flex flex-wrap gap-3">
                 <TrackedLink
-                  href="#workflow"
-                  event={ANALYTICS_EVENTS.primaryCta}
-                  eventDetail={{ placement: "hero" }}
-                  className="rounded-full bg-violet px-6 py-3.5 font-extrabold text-white shadow-[var(--shadow-hard)] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
-                >
-                  See how the editor works <span aria-hidden>↓</span>
-                </TrackedLink>
-                <TrackedLink
                   href="/features"
                   event={ANALYTICS_EVENTS.primaryCta}
                   eventDetail={{ placement: "hero_features" }}
+                  className="rounded-full bg-violet px-6 py-3.5 font-extrabold text-white shadow-[var(--shadow-hard)] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
+                >
+                  Explore the AI features <span aria-hidden>→</span>
+                </TrackedLink>
+                <TrackedLink
+                  href="#workflow"
+                  event={ANALYTICS_EVENTS.primaryCta}
+                  eventDetail={{ placement: "hero_workflow" }}
                   className="rounded-full border-2 border-ink px-6 py-3.5 font-extrabold transition hover:bg-card"
                 >
-                  Explore the AI features
+                  See how it works <span aria-hidden>↓</span>
                 </TrackedLink>
               </div>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-7 flex items-start gap-2 text-sm text-muted">
-                <span aria-hidden className="mt-0.5 font-hand text-lg leading-none text-magenta">✻</span>
-                This is not the official InstaDoodle website. It publishes no unverified prices, guarantees, ratings or
-                customer claims.
+              <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-muted">
+                {["Independent & unbiased", "No unverified prices or ratings", "Sourced from official product info"].map((t) => (
+                  <li key={t} className="flex items-center gap-2">
+                    <span aria-hidden className="grid h-4 w-4 place-items-center rounded-full bg-violet/10 text-[0.6rem] font-black text-violet">✓</span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 flex items-start gap-2 text-xs text-muted">
+                <span aria-hidden className="mt-0.5 font-hand text-base leading-none text-magenta">✻</span>
+                Not the official InstaDoodle website — no guarantees or customer claims are restated here.
               </p>
             </Reveal>
           </div>
           <Reveal delay={0.1} y={22}>
-            <div className="relative">
-              <span aria-hidden className="absolute -left-3 -top-6 z-10 -rotate-6 rounded-full bg-marker px-3 py-1 font-hand text-lg text-ink shadow-sm">
+            <div className="relative mx-auto w-full max-w-xl lg:mx-0 lg:max-w-none">
+              <span aria-hidden className="absolute -right-2 -top-5 z-20 rotate-3 rounded-full bg-marker px-3 py-1 font-hand text-lg text-ink shadow-sm">
                 built around scenes
               </span>
               <SceneFrame
@@ -130,12 +136,19 @@ export default function Home() {
                 label="instadoodle · scene editor"
                 sizes="(min-width: 1024px) 52vw, 100vw"
               />
-              <OfficialProductImage
-                image="join"
-                alt="Official InstaDoodle product visual supporting the guide's video-creation overview"
-                className="mt-5"
-                sizes="(min-width: 1024px) 42vw, 100vw"
-              />
+              <figure className="absolute -bottom-8 -left-5 z-10 hidden w-52 -rotate-3 overflow-hidden rounded-2xl border-2 border-ink bg-card shadow-[var(--shadow-hard)] lg:block xl:w-56">
+                <Image
+                  src={`${IMG}/samples/instadoodle-sample-brand-story.webp`}
+                  alt="A finished doodle explainer scene created in InstaDoodle"
+                  width={800}
+                  height={450}
+                  sizes="224px"
+                  className="h-auto w-full"
+                />
+                <figcaption className="flex items-center gap-1.5 border-t-2 border-ink px-3 py-2 text-xs font-bold text-ink">
+                  <span aria-hidden className="text-magenta">▸</span> the finished video
+                </figcaption>
+              </figure>
             </div>
           </Reveal>
         </div>
