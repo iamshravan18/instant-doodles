@@ -250,34 +250,45 @@ export default function Home() {
         </Stagger>
       </Section>
 
-      {/* Product demo · a practical view of the workflow after the three-step explanation */}
+      {/* Product demo · a guided lesson: watch the workflow run after the three-step explanation */}
       <Section tone="paper">
         <div className="grid items-center gap-10 lg:grid-cols-[0.86fr_1.14fr]">
           <Reveal>
-            <Eyebrow tone="magenta">See the workflow in context</Eyebrow>
+            <Eyebrow tone="magenta">Watch &amp; learn · the demo</Eyebrow>
             <SectionHeading underline className="mt-3">Watch the editor after you understand the scene sequence.</SectionHeading>
             <p className="mt-5 max-w-xl text-muted">
-              The three-step workflow above is easier to evaluate with a real demonstration in view. This official demo is
-              placed here deliberately: first decide what a clear scene sequence needs to do, then watch how the
-              product workflow supports that sequence. It is not a substitute for checking current plan details.
+              You have just read the three steps. This official demo shows them running as one continuous flow, so you can
+              judge how the workflow supports a scene sequence before weighing it against your own script.
             </p>
+            <div className="mt-6">
+              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-violet">What you&apos;ll learn</p>
+              <ul className="mt-3 space-y-2">
+                <li className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-violet">✓</span><span>How characters, props and backgrounds become a full scene</span></li>
+                <li className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-violet">✓</span><span>How drawing-hand reveals and timing pace a single idea</span></li>
+                <li className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-violet">✓</span><span>What a finished, exportable doodle video looks like</span></li>
+              </ul>
+            </div>
             <TrackedLink
-              href="/examples"
+              href="#deep-dive"
               event={ANALYTICS_EVENTS.navigationCta}
               eventDetail={{ placement: "home_demo_video" }}
               className="mt-6 inline-flex font-bold text-violet hover:underline"
             >
-              Explore examples by audience <span aria-hidden className="ml-1">→</span>
+              Next, see what makes it different <span aria-hidden className="ml-1">↓</span>
             </TrackedLink>
           </Reveal>
           <Reveal delay={0.08} y={22}>
             <VimeoVideo video="demo" />
+            <p className="mt-4 flex gap-2 text-sm text-muted">
+              <span aria-hidden className="mt-0.5 font-hand text-lg leading-none text-magenta">➜</span>
+              <span><strong className="font-bold text-ink">Takeaway:</strong> the editor handles sequencing and reveals, but a clear script still decides whether the finished video actually lands.</span>
+            </p>
           </Reveal>
         </div>
       </Section>
 
-      {/* 11 · Image-to-sketch */}
-      <Section tone="card" bordered>
+      {/* 11 · Image-to-sketch · deep dive 1 of 2 (arrives after the demo) */}
+      <Section id="deep-dive" tone="card" bordered>
         <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <Reveal y={22}>
             <SceneFrame
@@ -289,14 +300,15 @@ export default function Home() {
             />
           </Reveal>
           <Reveal delay={0.1}>
-            <Eyebrow tone="magenta">Image-to-sketch</Eyebrow>
+            <Eyebrow tone="magenta">Deep dive · what sets it apart</Eyebrow>
             <SectionHeading underline className="mt-3">
               Turn a photo or logo into a hand-drawn scene.
             </SectionHeading>
             <p className="mt-5 max-w-xl text-muted">
-              Upload an image and InstaDoodle redraws it in a doodle style, so a recognizable product, mascot or logo
-              can join the same visual world as the rest of your scenes. The built-in image editor adds crop, recolor
-              and one-click background removal.
+              Now that you have seen the whole flow, here is the first of two capabilities that most change what you can
+              make. Upload an image and InstaDoodle redraws it in a doodle style, so a recognizable product, mascot or
+              logo can join the same visual world as the rest of your scenes. The built-in image editor adds crop,
+              recolor and one-click background removal.
             </p>
             <Link href="/ai-whiteboard-animation" className="mt-6 inline-flex font-bold text-violet hover:underline">
               See the image-to-sketch workflow <span aria-hidden className="ml-1">→</span>
@@ -305,11 +317,15 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 12 · Voice, music, animation & transitions */}
+      {/* 12 · Voice, music, animation & transitions · deep dive 2 of 2 */}
       <Section tone="paper">
         <Reveal>
-          <Eyebrow>Sound & motion</Eyebrow>
-          <SectionHeading className="mt-3 max-w-3xl">Give each scene a voice, a pace and a transition.</SectionHeading>
+          <Eyebrow tone="magenta">Deep dive · what sets it apart</Eyebrow>
+          <SectionHeading underline className="mt-3 max-w-3xl">And the second: give each scene a voice, a pace and a transition.</SectionHeading>
+          <p className="mt-4 max-w-2xl text-muted">
+            Image-to-sketch changes what enters a scene; sound and motion change how it lands. Together they are what
+            separates a flat slideshow from a doodle video that actually holds attention.
+          </p>
         </Reveal>
         <div className="mt-9 grid gap-5 lg:grid-cols-2">
           <Reveal>
@@ -340,6 +356,9 @@ export default function Home() {
           <h2 className="mt-3 max-w-3xl text-[length:var(--step-3)] font-black leading-[1.03] tracking-[-0.03em]">
             Built for anyone who has to explain something.
           </h2>
+          <p className="mt-4 max-w-2xl text-white/70">
+            You have seen what it can do; here is who reaches for it — and, next, the jobs it fits best.
+          </p>
         </Reveal>
         <Stagger className="mt-8 flex flex-wrap gap-3">
           {audiences.map((a) => (
@@ -438,7 +457,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Official overview · a trust-first next step after the assessment */}
+      {/* Official overview · a guided lesson: the big-picture overview after the honest assessment */}
       <Section tone="paper">
         <div className="grid items-center gap-10 lg:grid-cols-[1.14fr_0.86fr]">
           <Reveal>
@@ -446,34 +465,40 @@ export default function Home() {
               video="sale"
               caption="An official InstaDoodle overview video. Watch it after reviewing the workflow, strengths, and limitations above, then verify current offer details directly."
             />
+            <p className="mt-4 flex gap-2 text-sm text-muted">
+              <span aria-hidden className="mt-0.5 font-hand text-lg leading-none text-magenta">➜</span>
+              <span><strong className="font-bold text-ink">Takeaway:</strong> use the overview to confirm the product matches the workflow you saw earlier — then verify current plan details on the official offer page.</span>
+            </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <Eyebrow tone="magenta">Explore before you decide</Eyebrow>
+            <Eyebrow tone="magenta">Watch &amp; learn · the overview</Eyebrow>
             <SectionHeading underline className="mt-3">A product overview belongs after the evaluation, not before it.</SectionHeading>
             <p className="mt-5 max-w-xl text-muted">
-              This official overview is a useful next step once you know the kind of explanation you need to make. Use
-              it to compare the workflow with your own script, then continue to the examples hub for audience-specific
-              planning ideas or the feature guide for detailed capability research.
+              You watched the editor in action earlier; this is the big-picture overview. With the strengths and limits
+              above in mind, use it to check the product against the kind of explanation you actually need to make.
             </p>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <TrackedLink
-                href="/examples"
-                event={ANALYTICS_EVENTS.navigationCta}
-                eventDetail={{ placement: "home_overview_video" }}
-                className="inline-flex font-bold text-violet hover:underline"
-              >
-                Explore the examples hub <span aria-hidden className="ml-1">→</span>
-              </TrackedLink>
-              <Link href="/features" className="inline-flex font-bold text-violet hover:underline">
-                Review the feature guide <span aria-hidden className="ml-1">→</span>
-              </Link>
+            <div className="mt-6">
+              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-violet">What you&apos;ll learn</p>
+              <ul className="mt-3 space-y-2">
+                <li className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-violet">✓</span><span>How InstaDoodle frames its own value and audience</span></li>
+                <li className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-violet">✓</span><span>Which time-sensitive claims to verify directly before buying</span></li>
+                <li className="flex gap-3 text-sm"><span aria-hidden className="mt-1 text-violet">✓</span><span>Whether the workflow fits the videos you plan to make</span></li>
+              </ul>
             </div>
+            <TrackedLink
+              href="#compare"
+              event={ANALYTICS_EVENTS.comparisonCta}
+              eventDetail={{ placement: "home_overview_video", destination: "#compare" }}
+              className="mt-6 inline-flex font-bold text-violet hover:underline"
+            >
+              Next, see how it compares <span aria-hidden className="ml-1">↓</span>
+            </TrackedLink>
           </Reveal>
         </div>
       </Section>
 
       {/* 18 · Comparison teaser */}
-      <Section tone="card" bordered>
+      <Section id="compare" tone="card" bordered>
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <Eyebrow tone="magenta">Weighing alternatives?</Eyebrow>
@@ -498,12 +523,36 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Plan-it bridge · connect the decision to the planning resources before the FAQ */}
+      <Section tone="lavender" bordered space="tight">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <Reveal>
+            <Eyebrow tone="violet">Plan before you build</Eyebrow>
+            <SectionHeading underline className="mt-3 max-w-2xl">A clear script beats a fancy tool — plan the video first.</SectionHeading>
+            <p className="mt-4 max-w-xl text-muted">
+              Once you have decided InstaDoodle fits, the planning resources cover script, scenes, pacing, sound and
+              export so your time in the editor is productive from the first scene.
+            </p>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <TrackedLink
+              href="/resources"
+              event={ANALYTICS_EVENTS.navigationCta}
+              eventDetail={{ placement: "home_resources" }}
+              className="inline-flex shrink-0 rounded-full bg-violet px-6 py-3.5 font-extrabold text-white shadow-[var(--shadow-hard)] transition hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
+            >
+              Get the planning resources <span aria-hidden className="ml-1">→</span>
+            </TrackedLink>
+          </Reveal>
+        </div>
+      </Section>
+
       {/* 19 · FAQ */}
       <Section tone="paper">
         <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
-            <Eyebrow>Before you evaluate</Eyebrow>
-            <SectionHeading className="mt-3">Common questions.</SectionHeading>
+            <Eyebrow>Last questions</Eyebrow>
+            <SectionHeading className="mt-3">Common questions before you start.</SectionHeading>
             <SketchUnderline className="mt-3 max-w-[10rem]" />
           </Reveal>
           <Reveal delay={0.05}>
