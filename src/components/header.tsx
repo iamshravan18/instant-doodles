@@ -72,7 +72,7 @@ export function Header() {
             href="/alternatives"
             event={ANALYTICS_EVENTS.navigationCta}
             eventDetail={{ placement: "header" }}
-            className="hidden rounded-full bg-ink px-4 py-2 text-sm font-bold text-white transition hover:bg-violet sm:inline-flex"
+            className="hidden rounded-full bg-ink px-4 py-2 text-sm font-bold text-white transition hover:bg-violet sm:inline-flex md:hidden lg:inline-flex"
           >
             Compare whiteboard tools <span aria-hidden>→</span>
           </TrackedLink>
