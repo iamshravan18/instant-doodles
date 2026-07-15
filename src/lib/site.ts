@@ -186,6 +186,39 @@ const pages: SitePage[] = [
     ],
     blocks: [
       {
+        type: "prose",
+        heading: "How to tell whiteboard animation fits a job",
+        body: [
+          "The question is rarely whether you can make a whiteboard video — you can make one for almost anything. It is whether a sequence of drawn scenes explains the job better than a slide deck, a screen recording or plain text. That single test decides every use case below.",
+          "We start each use case from a real communication problem, map it to a scene structure that fits, and name where the format runs out of road. If a job does not need a step-by-step reveal, another format usually serves it better — and we say so.",
+        ],
+      },
+      {
+        type: "cards",
+        heading: "What makes a job a good fit",
+        intro: "Use these signals to judge any communication job, not just the examples below.",
+        items: [
+          { title: "It has a sequence", body: "When order carries meaning — steps, a process, a build-up — scenes that reveal one idea at a time match how people actually follow it." },
+          { title: "Understanding comes before action", body: "Whiteboard animation is built for explanation, not spectacle. It shines when comprehension is the goal, more than raw persuasion or emotion." },
+          { title: "It will change over time", body: "Scene-based editing makes updates cheap, so recurring or evolving content — lessons, processes, launches — earns back the effort." },
+          { title: "It competes for attention", body: "A drawing-hand reveal holds a sound-off feed better than a static slide, which helps social, onboarding and long-form alike." },
+          { title: "A friendly tone helps", body: "The doodle style lowers the stakes of a dry, dense or intimidating topic, making it approachable without dumbing it down." },
+          { title: "You need one consistent explainer", body: "A single reusable video gives a class, team or audience the same clear framing — and a fixed reference you can point back to." },
+        ],
+      },
+      {
+        type: "checklist",
+        heading: "How we frame these use cases",
+        intro: "So you can trust the recommendations and know their limits.",
+        items: [
+          "We start from a communication problem, then map it to a realistic scene structure.",
+          "Every use case names where the format has limits, not only where it helps.",
+          "Examples are editorial interpretations of documented features — not case studies of specific customers.",
+          "We do not publish invented results, view counts or testimonials.",
+          "Plan specifics — pricing, limits, language counts — are flagged to verify on the official offer page.",
+        ],
+      },
+      {
         type: "split",
         anchor: "uc-education",
         heading: "Education and online courses",
@@ -234,11 +267,6 @@ const pages: SitePage[] = [
         type: "pills",
         heading: "Common audiences",
         items: ["Marketers", "Teachers", "Students", "Authors", "Customer support", "Product teams", "Podcasters", "Agencies"],
-      },
-      {
-        type: "callout",
-        kind: "editorial",
-        body: "These examples are editorial interpretations of how the product's documented features map to common jobs. They are not case studies of specific customers.",
       },
     ],
     related: ["/educational-video-maker", "/training-video-software", "/whiteboard-animation-examples"],
