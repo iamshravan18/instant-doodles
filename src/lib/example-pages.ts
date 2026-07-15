@@ -5,7 +5,7 @@ export const examplePages: SitePage[] = [
     slug: ["examples"],
     kind: "hub",
     title: "InstaDoodle Examples",
-    description: "InstaDoodle examples for marketing, business owners, content creators, and nonprofits—plus a practical framework for planning a whiteboard animation that teaches one clear idea.",
+    description: "See InstaDoodle whiteboard animation examples for marketing, business, creators, and nonprofits—plus how to plan a video around one clear idea.",
     h1: "InstaDoodle examples that show how a message becomes a video",
     eyebrow: "Examples hub",
     primaryKeyword: "InstaDoodle examples",

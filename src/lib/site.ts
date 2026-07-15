@@ -403,7 +403,7 @@ const pages: SitePage[] = [
   {
     slug: ["resources"],
     kind: "hub",
-    title: "Whiteboard Animation Resources & Planning Guides",
+    title: "Whiteboard Animation Guides",
     description: "Practical planning resources for doodle videos: scripting, storyboarding, pacing, voiceover, music, timing, export and accessibility checklists.",
     h1: "Plan the video before you open the editor",
     eyebrow: "Resources",
@@ -1534,9 +1534,9 @@ const pages: SitePage[] = [
   {
     slug: ["about"],
     kind: "company",
-    title: "About This Independent InstaDoodle Guide",
+    title: "About This Editorial Guide",
     description:
-      "Who runs this independent InstaDoodle guide, its editorial mission, how products are researched and compared, its independence and affiliate policy, and how information is kept accurate and up to date.",
+      "Meet the independent InstaDoodle guide: who writes it, how products are researched and compared, and how we stay accurate and affiliate-transparent.",
     h1: "About this independent InstaDoodle guide",
     eyebrow: "About this guide",
     primaryKeyword: "about InstaDoodle guide",
@@ -1668,7 +1668,7 @@ const pages: SitePage[] = [
     kind: "company",
     title: "Editorial Policy",
     description:
-      "The editorial policy of the Independent InstaDoodle Guide: review methodology, research standards, independence, affiliate disclosure, and how content is updated, corrected and sourced.",
+      "How the independent InstaDoodle guide works: our review methodology, research standards, independence, affiliate disclosure, and corrections policy.",
     h1: "Editorial policy",
     eyebrow: "Editorial standards",
     primaryKeyword: "editorial policy",
