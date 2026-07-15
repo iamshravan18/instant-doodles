@@ -1,4 +1,4 @@
-import { absoluteUrl } from "./site";
+import { absoluteUrl, OFFICIAL_PRODUCT_URL } from "./site";
 
 /* ============================================================
    MEDIA REGISTRY — single source of truth for every official
@@ -119,7 +119,7 @@ export const IMAGES = {
     width: 1000,
     height: 833,
     alt: "InstaDoodle scene editor interface with a doodle canvas and editing controls",
-    caption: "The scene editor interface with canvas and editing controls.",
+    caption: "One browser workspace: assets, canvas, timing and export live in a single scene-based editor, so you build scene by scene instead of on a blank canvas.",
     loading: "lazy",
     priority: false,
     sourceNote: RIGHTS_NOTE,
@@ -147,7 +147,7 @@ export const IMAGES = {
     width: 1000,
     height: 561,
     alt: "InstaDoodle AI image-to-sketch panel turning an uploaded photo into a hand-drawn doodle",
-    caption: "AI image-to-sketch redrawing a photo as a hand-drawn doodle.",
+    caption: "Upload a photo or logo and it is redrawn as a doodle in the same style, then cleaned up with one-click background removal.",
     loading: "lazy",
     priority: false,
     officialSource: "https://instadoodle.com/images/feature2.webp",
@@ -553,6 +553,9 @@ export function getVideo(key: VimeoVideoKey): VideoAsset {
 
 type SchemaNode = Record<string, unknown>;
 
+/** @id of the InstaDoodle SoftwareApplication node (emitted site-wide in schema.ts). */
+const softwareId = `${OFFICIAL_PRODUCT_URL}#software`;
+
 /** Build a schema.org ImageObject for a local image (absolute URLs). */
 export function imageObject(key: MediaKey): SchemaNode {
   const img = getImage(key);
@@ -564,6 +567,7 @@ export function imageObject(key: MediaKey): SchemaNode {
     height: img.height,
     ...(img.caption ? { caption: img.caption } : {}),
     ...(img.officialSource ? { creditText: "InstaDoodle" } : {}),
+    about: { "@id": softwareId },
   };
 }
 
@@ -577,6 +581,8 @@ export function videoObject(key: VimeoVideoKey): SchemaNode {
     description: v.description,
     embedUrl: v.embedUrl,
     contentUrl: v.contentUrl,
+    inLanguage: "en",
+    about: { "@id": softwareId },
     ...(v.thumbnailUrl ? { thumbnailUrl: v.thumbnailUrl } : {}),
     ...(v.uploadDate ? { uploadDate: v.uploadDate } : {}),
     ...(v.duration ? { duration: v.duration } : {}),

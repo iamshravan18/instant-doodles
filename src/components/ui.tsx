@@ -99,6 +99,7 @@ export function SceneFrame({
   priority = false,
   sizes,
   label,
+  caption,
   className = "",
 }: {
   src: string;
@@ -108,6 +109,7 @@ export function SceneFrame({
   priority?: boolean;
   sizes?: string;
   label?: string;
+  caption?: string;
   className?: string;
 }) {
   return (
@@ -127,6 +129,9 @@ export function SceneFrame({
         sizes={sizes ?? "(min-width: 1024px) 45vw, 100vw"}
         className="h-auto w-full"
       />
+      {caption && (
+        <figcaption className="border-t-2 border-ink px-4 py-3 text-sm text-muted">{caption}</figcaption>
+      )}
     </figure>
   );
 }

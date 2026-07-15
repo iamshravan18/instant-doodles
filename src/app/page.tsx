@@ -58,7 +58,11 @@ const faqs = [
 ] as const;
 
 export default function Home() {
-  const schema = homeStructuredData(faqs, ["demo", "sale"]);
+  const schema = homeStructuredData(
+    faqs,
+    ["demo", "sale"],
+    ["heroEditor", "sceneEditor", "imageToSketch", "sampleBrand", "sampleKids"],
+  );
   const heroEditor = getImage("heroEditor");
   const sampleBrand = getImage("sampleBrand");
   const sceneEditor = getImage("sceneEditor");
@@ -191,6 +195,7 @@ export default function Home() {
               width={sceneEditor.width}
               height={sceneEditor.height}
               label="scene editor"
+              caption={sceneEditor.caption}
             />
           </Reveal>
         </div>
@@ -285,7 +290,10 @@ export default function Home() {
             </TrackedLink>
           </Reveal>
           <Reveal delay={0.08} y={22}>
-            <VimeoVideo video="demo" />
+            <VimeoVideo
+              video="demo"
+              caption="Official product demo. Watch how drawing-hand reveals and scene timing pace one idea at a time — the sequencing you will plan for your own script."
+            />
             <p className="mt-4 flex gap-2 text-sm text-muted">
               <span aria-hidden className="mt-0.5 font-hand text-lg leading-none text-magenta">➜</span>
               <span><strong className="font-bold text-ink">Takeaway:</strong> the editor handles sequencing and reveals, but a clear script still decides whether the finished video actually lands.</span>
@@ -304,6 +312,7 @@ export default function Home() {
               width={imageToSketch.width}
               height={imageToSketch.height}
               label="image → sketch"
+              caption={imageToSketch.caption}
             />
           </Reveal>
           <Reveal delay={0.1}>
