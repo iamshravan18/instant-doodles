@@ -81,14 +81,14 @@ export interface VideoAsset extends MediaMeta {
   embedUrl: string;
   /** Canonical watch URL for VideoObject.contentUrl. */
   contentUrl: string;
-  /** Poster/thumbnail (placeholder-supported until owner supplies one). */
-  thumbnailUrl?: string;
+  /** Poster/thumbnail. Required by Google's VideoObject spec. */
+  thumbnailUrl: string;
   /** Reference to a transcript resource (placeholder-supported). */
   transcriptRef?: string;
-  /** ISO 8601 duration, e.g. "PT1M52S" (placeholder-supported). */
+  /** ISO 8601 duration, e.g. "PT1M52S". Recommended by Google. */
   duration?: string;
-  /** ISO 8601 upload date (placeholder-supported). */
-  uploadDate?: string;
+  /** ISO 8601 upload date. Required by Google's VideoObject spec. */
+  uploadDate: string;
   /** Chapter markers (placeholder-supported). */
   chapters?: VideoChapter[];
 }
@@ -435,10 +435,11 @@ export const VIDEOS = {
       "An official overview of the InstaDoodle workflow and the kind of whiteboard videos it is designed to create.",
     embedUrl: "https://player.vimeo.com/video/1031062753?h=679763e772",
     contentUrl: "https://vimeo.com/1031062753",
-    thumbnailUrl: undefined,
+    thumbnailUrl:
+      "https://i.vimeocdn.com/video/1951726419-97bf6ddc5f8657c66ef63ca51731e1636c2a75c236665941cce81e670f254951-d_1280x720?region=us",
     transcriptRef: undefined,
-    duration: undefined,
-    uploadDate: undefined,
+    duration: "PT4M53S",
+    uploadDate: "2024-11-19",
     chapters: undefined,
     purpose: "Big-picture product overview, shown after the evaluation.",
     seoContext: "InstaDoodle · product overview",
@@ -452,10 +453,11 @@ export const VIDEOS = {
       "An official product demonstration that gives viewers a concrete look at the whiteboard-animation workflow.",
     embedUrl: "https://player.vimeo.com/video/965207353",
     contentUrl: "https://vimeo.com/965207353",
-    thumbnailUrl: undefined,
+    thumbnailUrl:
+      "https://i.vimeocdn.com/video/1877845998-9912edec0f6e0f7e48d9f99c3c1a88bb1ea6d69fd9618d42dfe2c3bb263014be-d_1280x720?region=us",
     transcriptRef: undefined,
-    duration: undefined,
-    uploadDate: undefined,
+    duration: "PT1M52S",
+    uploadDate: "2024-06-22",
     chapters: undefined,
     purpose: "Concrete demonstration of the scene workflow.",
     seoContext: "InstaDoodle · workflow demo",
@@ -468,10 +470,11 @@ export const VIDEOS = {
     description: "An official example for planning a marketing message as a short doodle-video sequence.",
     embedUrl: "https://player.vimeo.com/video/949816110",
     contentUrl: "https://vimeo.com/949816110",
-    thumbnailUrl: undefined,
+    thumbnailUrl:
+      "https://i.vimeocdn.com/video/1953216479-f4930dfedda6d6ae950bc63a0b441a10cc28a74cd7c15dfd119bfb196e4561e3-d_1280x720?region=us",
     transcriptRef: undefined,
-    duration: undefined,
-    uploadDate: undefined,
+    duration: "PT2M15S",
+    uploadDate: "2024-05-24",
     chapters: undefined,
     purpose: "Audience example: marketing.",
     seoContext: "marketing video · doodle example",
@@ -485,10 +488,11 @@ export const VIDEOS = {
       "An official example for explaining a business offer, process, or customer problem with doodle animation.",
     embedUrl: "https://player.vimeo.com/video/949817416",
     contentUrl: "https://vimeo.com/949817416",
-    thumbnailUrl: undefined,
+    thumbnailUrl:
+      "https://i.vimeocdn.com/video/1936376344-7345ec5124d89558b9c9e61029bc2e6fc7245fb88c505ac5f1967ad354eac883-d_1280x720?region=us",
     transcriptRef: undefined,
-    duration: undefined,
-    uploadDate: undefined,
+    duration: "PT1M40S",
+    uploadDate: "2024-05-24",
     chapters: undefined,
     purpose: "Audience example: business owners.",
     seoContext: "business explainer · doodle example",
@@ -501,10 +505,11 @@ export const VIDEOS = {
     description: "An official example for shaping a creator idea into a clear, reusable video format.",
     embedUrl: "https://player.vimeo.com/video/949816024",
     contentUrl: "https://vimeo.com/949816024",
-    thumbnailUrl: undefined,
+    thumbnailUrl:
+      "https://i.vimeocdn.com/video/1953218733-9c7269cb48d1a6dbb1618c07b2a4d1ec484d40281f959beccea39a8fee24c652-d_1280x720?region=us",
     transcriptRef: undefined,
-    duration: undefined,
-    uploadDate: undefined,
+    duration: "PT1M22S",
+    uploadDate: "2024-05-24",
     chapters: undefined,
     purpose: "Audience example: content creators.",
     seoContext: "creator video · doodle example",
@@ -517,10 +522,11 @@ export const VIDEOS = {
     description: "An official example for helping a nonprofit explain a mission, program, or action to supporters.",
     embedUrl: "https://player.vimeo.com/video/949816192",
     contentUrl: "https://vimeo.com/949816192",
-    thumbnailUrl: undefined,
+    thumbnailUrl:
+      "https://i.vimeocdn.com/video/1914940780-848ee4582fd654f4854652d25538f52b97d5a4032b968bf60b1c6dfd6ec52254-d_1280x720?region=us",
     transcriptRef: undefined,
-    duration: undefined,
-    uploadDate: undefined,
+    duration: "PT1M40S",
+    uploadDate: "2024-05-24",
     chapters: undefined,
     purpose: "Audience example: nonprofits.",
     seoContext: "nonprofit video · doodle example",
@@ -571,20 +577,20 @@ export function imageObject(key: MediaKey): SchemaNode {
   };
 }
 
-/** Build a schema.org VideoObject for a video. Emits a valid baseline from
- *  available fields; thumbnailUrl / uploadDate / duration enrich it when supplied. */
+/** Build a schema.org VideoObject for a video. Always emits Google's required
+ *  properties (name, thumbnailUrl, uploadDate); duration is added when supplied. */
 export function videoObject(key: VimeoVideoKey): SchemaNode {
   const v = getVideo(key);
   return {
     "@type": "VideoObject",
     name: v.title,
     description: v.description,
+    thumbnailUrl: v.thumbnailUrl,
+    uploadDate: v.uploadDate,
     embedUrl: v.embedUrl,
     contentUrl: v.contentUrl,
     inLanguage: "en",
     about: { "@id": softwareId },
-    ...(v.thumbnailUrl ? { thumbnailUrl: v.thumbnailUrl } : {}),
-    ...(v.uploadDate ? { uploadDate: v.uploadDate } : {}),
     ...(v.duration ? { duration: v.duration } : {}),
   };
 }
